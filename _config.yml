@@ -1,1 +1,13 @@
-theme: jekyll-theme-minimal
+title: "bors-ng"
+description: "A merge bot for GitHub pull requests"
+
+permalink: pretty
+paginate: 10
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+gems:
+- jekyll-paginate
+- jekyll-seo-tag

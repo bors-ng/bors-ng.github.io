@@ -1,0 +1,24 @@
+---
+layout: page
+title: "Relentless testing"
+---
+
+<p>bors automatically makes sure that your GitHub pull requests pass all the tests,
+after merging them,
+before actually landing them in master.
+
+<p>You can set it up for your GitHub repo in <a href="https://bors-ng.herokuapp.com/">the app itself</a>.
+
+<section class=blog>
+{% for post in paginator.posts %}
+  <article class=blog--item>
+    <h2 class="header">
+      <a href="{{ post.url }}" class=more>{{ post.title }}</a>
+      <span class=less>{{ post.date | date: "%b %-d, %Y" }}</span>
+    </h2>
+    <p>{{ post.summary }}</p>
+    <a href="{{ post.url }}" class=more>Read more...</a>
+  </article>
+  {% include pagination.html %}
+{% endfor %}
+</section>
