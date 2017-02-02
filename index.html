@@ -1,24 +1,41 @@
 ---
-layout: page
-title: "Relentless testing"
+layout: home
+title: "bors &mdash; consistent automated testing"
 ---
 
-<p>bors automatically makes sure that your GitHub pull requests pass all the tests,
-after merging them,
-before actually landing them in master.
+<nav><div class=wrapper>
 
-<p>You can set it up for your GitHub repo in <a href="https://bors-ng.herokuapp.com/">the app itself</a>.
+<h1 class="header header--allcaps">Consistent automated testing</h1>
+
+<p>Running tests on each developer's branch is not sufficent.
+They may <a href="/essay/2017/02/02/pitch/">conflict in a semantic way</a>
+that causes the master branch to fail when merged.
+Additional work that is built on such a broken master branch is tainted,
+unable to tell which failures are the result of an existing bug or a new one.
+
+<p>Instead, the combined system must be tested, as a whole,
+before the work becomes a part of the master branch which will form the basis of future work.
+Doing so, as work continues unabated, will force a backlog to be enqueued.
+
+<p><a href="http://graydon2.dreamwidth.org/1597.html" title="The not-rocket-science rule of software engineering">This system should be automated</a>.
+The tool that automates this is called bors.
+
+</div></nav>
+
+<div class=wrapper>
 
 <section class=blog>
 {% for post in paginator.posts %}
   <article class=blog--item>
     <h2 class="header">
-      <a href="{{ post.url }}" class=more>{{ post.title }}</a>
+      <a href="{{ post.url }}" class="more more--header">{{ post.title }}</a>
       <span class=less>{{ post.date | date: "%b %-d, %Y" }}</span>
     </h2>
     <p>{{ post.summary }}</p>
     <a href="{{ post.url }}" class=more>Read more...</a>
   </article>
-  {% include pagination.html %}
 {% endfor %}
+  {% include pagination.html %}
 </section>
+
+</div>

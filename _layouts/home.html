@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body>
+
+  <header role="banner">
+    <div class="wrapper">
+      <img alt="bors" src="/images/a.svg" width=180 height=50>
+      <span id=header-user>
+        {% include navigation.html %}
+      </span>
+    </div>
+  </header>
+
+  {{ content }}
+
+  {% include footer.html %}
+</body>
+</html>

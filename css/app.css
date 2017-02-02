@@ -29,45 +29,6 @@ nav h1 {
 footer {
   border-top: solid 1px #CCC;
 }
-/* Blog listing styles */
-.blog {
-  margin-top: 32px;
-  padding-top: 32px;
-  border-top: solid 1px #EEE;
-  padding-bottom: 32px;
-}
-.blog--item {
-  margin-bottom: 32px;
-  padding-bottom: 32px;
-  border-bottom: solid 1px #EEE;
-}
-.blog .pagination {
-  position: relative;
-}
-.blog .pagination-item {
-  border: solid 1px currentColor;
-  padding: 8px 10px;
-}
-.blog .disabled {
-  color: #999;
-  font-weight: normal;
-}
-.blog .left {
-  float: left;
-}
-.blog .right {
-  float: right;
-}
-.blog .more {
-  display: block;
-}
-.header .more {
-  color: inherit;
-}
-.header .less {
-  font-size: 1rem;
-  font-weight: normal;
-}
 /* Use underline-on-hover for links.
    This is used for consistency, since fill-link breaks outlines. */
 :link, :visited {
@@ -81,6 +42,45 @@ footer {
 :visited:hover, :visited:focus {
   text-decoration: underline;
   outline: none;
+}
+/* Blog listing styles */
+.blog {
+  margin: 16px 0;
+}
+.blog--item {
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: solid 1px #EEE;
+}
+.pagination {
+  position: relative;
+}
+.pagination--item {
+  border: solid 1px currentColor;
+  padding: 8px 10px;
+}
+.pagination--item.disabled {
+  color: #999;
+  font-weight: normal;
+}
+.pagination--item.left {
+  float: left;
+}
+.pagination--item.right {
+  float: right;
+}
+.more {
+  display: block;
+}
+.more--header {
+  color: inherit;
+}
+.less {
+  font-size: 1rem;
+  font-weight: normal;
+}
+.clearfix {
+  clear: both;
 }
 /* The tab bar. */
 .tabs {
@@ -152,6 +152,9 @@ footer {
   margin: 0;
   margin-bottom: 7px;
   padding-bottom: 8px;
+}
+.header--allcaps {
+  text-transform: uppercase;
 }
 /* A responsive image */
 .gallery img {
