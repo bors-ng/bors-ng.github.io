@@ -1,18 +1,20 @@
 /* Should be used inside of the header, main, and footer */
 .wrapper {
   max-width: 800px;
-  margin: 0 auto;
-  padding: 16px 20px;
+  margin: 16px auto;
+  padding: 0 20px;
 }
 .wrapper--mini {
-  padding: 8px 20px;
+  margin: 8px auto;
 }
 /* The header, nav bar, and footer */
 header, nav {
   border-bottom: solid 1px #CCC;
+  overflow: hidden;
 }
 #header-user {
   float: right;
+  text-align: right;
 }
 #header-user > a, #header-user img {
   vertical-align: middle;
@@ -45,7 +47,8 @@ footer {
 }
 /* Blog listing styles */
 .blog {
-  margin: 16px 0;
+  padding: 16px 0;
+  overflow: hidden;
 }
 .blog--item {
   margin-bottom: 32px;
@@ -156,6 +159,46 @@ footer {
 .header--allcaps {
   text-transform: uppercase;
 }
+/* The buttons and the bars that they go inside */
+.toolbar {
+  margin: 32px -10px;
+}
+.toolbar form {
+  display: inline;
+}
+.toolbar-item {
+  margin: -8px 10px;
+  padding: 8px 10px;
+  color: #FFF;
+  background-color: #4d76ae;
+  border: none;
+  border-radius: 8px;
+  transition: box-shadow 0.1s ease-in-out;
+  box-shadow: 0 1px 2px #666;
+  cursor: pointer;
+}
+.toolbar-item:hover, 
+.toolbar-item:focus {
+  text-decoration: none;
+  box-shadow: 0 1px 4px #666;
+}
+.toolbar-item:active {
+  box-shadow: 0 0 0 #666;
+}
+.toolbar-item--disabled,
+.toolbar-item--disabled:hover,
+.toolbar-item--disabled:active,
+.toolbar-item--disabled:focus {
+  box-shadow: none;
+  background-color: #999;
+  cursor: not-allowed;
+}
+.toolbar-item--add {
+  background: #5e9766;
+}
+.toolbar-button--remove {
+  background-color: #df3600;
+}
 /* A responsive image */
 .gallery img {
   max-width: 100%;
@@ -163,4 +206,13 @@ footer {
 .gallery {
   margin: 8px 10px;
   border: solid 1px #EEE;
+}
+/* Code previews */
+.highlighter-rouge {
+  margin: 32px 0;
+}
+
+.highlighter-rouge pre.highlight {
+  padding: 16px;
+  margin: -16px;
 }

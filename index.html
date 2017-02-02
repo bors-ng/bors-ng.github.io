@@ -24,6 +24,11 @@ The tool that automates this is called bors.
 
 <div class=wrapper>
 
+<div class=toolbar>
+<a class="toolbar-item toolbar-item--add" href="/getting-started/">Getting started</a>
+<a class="toolbar-item" href="https://bors-ng.herokuapp.com">Log in to the dashboard</a>
+</div>
+
 <section class=blog>
 {% for post in paginator.posts %}
   <article class=blog--item>
@@ -37,5 +42,4 @@ The tool that automates this is called bors.
 {% endfor %}
   {% include pagination.html %}
 </section>
-
 </div>
