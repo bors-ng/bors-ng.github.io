@@ -10,13 +10,10 @@ it's just a frontend that implements a particular workflow on top of it.
 So the first step of setting up bors is setting something up to automatically run your tests.
 It should be able to run the contents of a particular branch
 and report its results using a GitHub Status notification
-(the little <span style="color:orange" title="The build is in progress">&bull;</span>, <span style="color:green" title="Build succeeded">&#10003;</span>, or <span style="color:red" title="Build failed">&times;</span> next to a commit in the commits list).
-Jenkins requires the GitHub plugin to do this.
+(the little <span style="color:orange" title="The build is in progress">&bull;</span>, <span style="color:green" title="Build succeeded">&#10003;</span>, or <span style="color:red" title="Build failed">&times;</span> next to a commit in the commits list).Newer CI systems, like Travis and AppVeyor, will do this by default. Jenkins and BuildBot have plugins for it.
 
 Your CI system should build the "staging" and "trying" branches, but should not build a branch called "staging.tmp".
-If your CI system is misconfigured in this sense, bors should notify you.
-
-For example, add this to your .travis.yml or appveyor.yml file:
+If your CI system is misconfigured to do this, bors should notify you. For example, add this to your .travis.yml or appveyor.yml file:
 
 ```yaml
 branches:
@@ -29,8 +26,7 @@ branches:
     #- master
 ```
 
-Once you have something like Travis, AppVeyor, CircleCI, Jenkins, TaskCluster, BuildBot,
-or anything else that can work in their stead,
+Once you have a Continuous Integration service running,
 connect bors-ng to your repo <a href="https://github.com/integration/bors-ng">from within GitHub</a>.
 
 The final step is to create a `bors.toml` file in your repo.
