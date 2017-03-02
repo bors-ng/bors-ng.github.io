@@ -84,7 +84,7 @@ It might be one of these common problems:
   * The pull request needs to be made against your master branch.
     At the top of the PR page, next to where it says "Opened", it should read something like:
 
-    > thecontributor wants to merge 9,001 commits into master from thecontributor:localbranch
+    > [contributor] wants to merge [number] commits into `master` from `[contributor]:[localbranch]`
 
   * bors needs to be able to force-push to the "staging", "staging.tmp", "trying", and "trying.tmp" branches.
     It doesn't need to be able to force-push to "master",
@@ -103,8 +103,8 @@ It might be one of these common problems:
     your CI system needs to run the test suite on that commit.
     You can test this by pushing a commit to one of those branches by hand and seeing if it runs.
     
-    Your CI system will probably work with GitHub either by registering a webhook (Settings -> Webhooks), and integration, or a service (Settings -> Integrations & Services).
-    If there's nothing about your CI system in any of those areas, it probably isn't set up right.
+    Your CI system will probably work with GitHub either by registering a webhook (Settings -> Webhooks), an integration, or a service (Settings -> Integrations & Services).
+    If there's nothing about your CI system in either of those two screens, it probably isn't set up right.
 
     If this is the problem, bors will time out every time.
 
