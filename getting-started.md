@@ -76,3 +76,50 @@ When this is run, your branch and master get merged into "trying",
 and bors will report the results just like the "staging" would
 (you probably want to make sure your CI system handles staging and trying the same).
 Only reviewers can push to this, since the backend CI system may not be well-isolated.
+
+# If it doesn't work
+
+It might be one of these common problems:
+
+  * The pull request needs to be made against your master branch.
+    At the top of the PR page, next to where it says "Opened", it should read something like:
+
+    > thecontributor wants to merge 9,001 commits into master from thecontributor:localbranch
+
+  * bors needs to be able to force-push to the "staging", "staging.tmp", "trying", and "trying.tmp" branches.
+    It doesn't need to be able to force-push to "master",
+    but it needs to be able to regular-push a commit there.
+
+    You can check this in your repository's Settings tab, in the Branches section.
+    The "master" branch can be protected,
+    and since bors will usually be the only thing that commits directly to master,
+    you can set it to require the "bors" Commit Status to push to master.
+    Do not set the staging/trying branches to protected.
+
+    If this is the problem, bors will not be able to get past the "waiting in the queue" stage,
+    or it will falsely report a merge conflict.
+
+  * When bors pushes a commit to the "staging" and "trying" branches,
+    your CI system needs to run the test suite on that commit.
+    You can test this by pushing a commit to one of those branches by hand and seeing if it runs.
+    
+    Your CI system will probably work with GitHub either by registering a webhook (Settings -> Webhooks), and integration, or a service (Settings -> Integrations & Services).
+    If there's nothing about your CI system in any of those areas, it probably isn't set up right.
+
+    If this is the problem, bors will time out every time.
+
+  * Your CI system needs to report success and failure as GitHub Commit Statuses.
+    bors might support other ways to report success and failure someday,
+    but commit statuses work for so many CI systems that it doesn't seem necessary right now.
+
+    If you go to your repository's home page, change from "master" to the "staging" branch,
+    then click the "**9,001** Commits" button, you'll see a list of commits.
+    The one at the top of the list should have one of the checkmark/crossmark/dot icons next to it.
+    You can click it to find out if your CI system is creating a commit status.
+
+    If this is the problem, bors will time out every time.
+
+  * The bors integration needs to be enabled on your GitHub repo.
+    If this is the problem, bors will not respond to commands.
+
+You can also get help on [our web-connected IRC channel](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23bors), or you can [file an issue](https://github.com/bors-ng/bors-ng/issues/new). If it turns out to be a bug, thanks! We won't chew you out if it turns out to be one of those problems after all.
