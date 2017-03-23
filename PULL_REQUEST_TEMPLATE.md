@@ -17,3 +17,7 @@ This Month in Bors checklist:
 - [ ] Find a new featured user
 
 - [ ] Find a screenshot
+
+And, this should be the last thing you do:
+
+- [ ] Create, and link in, next month's PR
