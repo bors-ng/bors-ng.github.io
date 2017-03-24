@@ -64,7 +64,7 @@ Your CI tool will test it in there,
 and report the result back where Bors-NG can see it.
 If that result is "OK", master gets fast-forwarded to reach it.
 
-The status can be seen in <a href="https://bors-ng.herokuapp.com/">the Dashboard page</a>,
+The status can be seen in <a href="https://bors-app.herokuapp.com/">the Dashboard page</a>,
 which also makes a good one-stop-shop to see pull requests that are waiting for review.
 The dashboard page is also where the permission to review a pull request can be handed out to other people (this list is too sensitive for bors.toml, and it can't affect the success of a build).
 
