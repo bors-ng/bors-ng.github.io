@@ -64,9 +64,8 @@ Your CI tool will test it in there,
 and report the result back where Bors-NG can see it.
 If that result is "OK", master gets fast-forwarded to reach it.
 
-The status can be seen in <a href="https://bors-app.herokuapp.com/">the Dashboard page</a>,
+The status can be seen in [the Dashboard page],
 which also makes a good one-stop-shop to see pull requests that are waiting for review.
-The dashboard page is also where the permission to review a pull request can be handed out to other people (this list is too sensitive for bors.toml, and it can't affect the success of a build).
 
 There's also:
 
@@ -76,6 +75,21 @@ When this is run, your branch and master get merged into "trying",
 and bors will report the results just like the "staging" would
 (you probably want to make sure your CI system handles staging and trying the same).
 Only reviewers can push to this, since the backend CI system may not be well-isolated.
+
+# Adding reviewers
+
+If you click your nickname on [the Dashboard page],
+there's a button to get a list of Repositories.
+Click there, then click the repository you want to look at.
+
+There's two tabs: a Pull requests tab and a Settings tab.
+Click the settings tab.
+
+In there is a list of currently set up reviewers.
+Type the GitHub login name of the user you want to add,
+into the text field next to the "Add" button, then click it.
+
+[the Dashboard page]: https://bors-app.herokuapp.com/
 
 # If it doesn't work
 
