@@ -39,7 +39,7 @@ and it doesn't hit GitHub's rate limit as quickly as the polling approach.
 It helps that homu maintains a database, so it doesn't have to fetch as much information to do anything.
 
 [The Rust community organization have a fork of Servo's Homu, which they renamed bors][rust-community/bors].
-It's not Bors-NG or Bors-OG, and it doesn't seem to be actively maintained.
+It's Homu, and Rust isn't actually using it (they're using Servo's fork).
 
 [barosl/homu]: https://github.com/barosl/homu
 [servo/homu]: https://github.com/servo/homu
@@ -49,7 +49,7 @@ It's not Bors-NG or Bors-OG, and it doesn't seem to be actively maintained.
 So where does Bors-NG fit into all of this?
 ===========================================
 
-Bors-NG was created after homu, to solve two major problems it had:
+Bors-NG was created after Homu, to solve two major problems it had:
 
   * *Homu is difficult to set up.*
     The base distribution doesn't have any way to administer one's repository without admin access to the whole homu.cfg file.
