@@ -42,7 +42,7 @@ status = [
 ]
 # Uncomment this to use a two hour timeout.
 # The default is one hour.
-#timeout = 7200
+#timeout_sec = 7200
 ```
 
 Once that's there, `bors r+` will work.
