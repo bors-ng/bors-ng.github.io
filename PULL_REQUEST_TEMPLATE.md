@@ -1,4 +1,9 @@
-This Month in Bors checklist:
+Want to help out with writing TMIB but don't have write access to the repo?
+[Go here](https://github.com/bors-ng/bors-ng.github.io/blob/tmib-EDITION_NUMBER/_posts/EDITION_DATE-tmib-EDITION_NUMBER.md), then click the pencil button. That'll open a pull request for the in-progress edition of TMIB.
+
+This Month in Bors checklist, for whoever's in charge of writing it:
+
+- [ ] Fix the edition number and date at the top of the pull-request
 
 - [ ] Update the issue number in the title area
 
@@ -18,6 +23,6 @@ This Month in Bors checklist:
 
 - [ ] Find a screenshot
 
-And, this should be the last thing you do:
+And, this should be the last thing the writer does:
 
-- [ ] Create, and link in, next month's PR
+- [ ] Create, and link in, next month's PR, so that the published edition links to the next one
