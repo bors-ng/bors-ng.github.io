@@ -21,8 +21,6 @@ This Month in Bors checklist, for whoever's in charge of writing it:
 
 - [ ] Find a new featured user
 
-- [ ] Find a screenshot
-
 And, this should be the last thing the writer does:
 
 - [ ] Create, and link in, next month's PR, so that the published edition links to the next one
