@@ -215,4 +215,5 @@ footer {
 .highlighter-rouge pre.highlight {
   padding: 16px;
   margin: -16px;
+  overflow-x: auto;
 }
