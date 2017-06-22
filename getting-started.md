@@ -91,6 +91,21 @@ into the text field next to the "Add" button, then click it.
 
 [the Dashboard page]: https://bors-app.herokuapp.com/
 
+## Delegating reviews
+
+In addition to adding reviewers who can approve any PR in the repo,
+you can "delegate" permission to approve a single PR to anyone else.
+It works like this:
+
+> * @some-user: bors r+
+> * @bors[bot]: Permission denied
+> * @some-reviewer: bors delegate=some-user
+> * @bors[bot]: some-user now has permission to review this pull request.
+> * @some-user: bors r+
+> * @bors[bot]: Added to queue
+
+If some-user happens to be the pull request author, you can also use the shorthand `delegate+` command.
+
 # If it doesn't work
 
 It might be one of these common problems:
