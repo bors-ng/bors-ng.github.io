@@ -42,4 +42,23 @@ The tool that automates this is called bors.
 {% endfor %}
   {% include pagination.html %}
 </section>
+
+<section>
+  <h2 class=header>Quick command reference</h2>
+  <dl>
+    <dt>bors r+
+      <dd>Run the test suite, and push to master if it passes. Short for "reviewed: looks good."
+    <dt>bors r=USER1,USER2,USER3...
+      <dd>Same as r+, but the "reviewer" in the commit log will be recorded as the user(s) given as the argument.
+    <dt>bors r-
+      <dd>Cancel an r+ or r=.
+    <dt>bors try
+      <dd>Run the test suite, without pushing to master.
+    <dt>bors delegate+
+      <dd>Allow the pull request author to r+ their changes.
+    <dt>bors delegate=USER1,USER2,USER3...
+      <dd>Allow the listed users to r+ this pull request's changes.
+  </dl>
+</section>
+
 </div>
