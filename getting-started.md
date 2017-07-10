@@ -110,11 +110,6 @@ If some-user happens to be the pull request author, you can also use the shortha
 
 It might be one of these common problems:
 
-  * The pull request needs to be made against your master branch.
-    At the top of the PR page, next to where it says "Opened", it should read something like:
-
-    > [contributor] wants to merge [number] commits into `master` from `[contributor]:[localbranch]`
-
   * bors needs to be able to force-push to the "staging", "staging.tmp", "trying", and "trying.tmp" branches.
     It doesn't need to be able to force-push to "master",
     but it needs to be able to regular-push a commit there.
