@@ -37,13 +37,22 @@ footer {
   text-decoration: none;
   color: #4d76ae;
 }
+:link:focus {
+  color: #33b5e5;
+}
 :visited {
   color: #ae4d76;
+}
+:visited:focus {
+  color: #b533e5;
 }
 :link:hover, :link:focus,
 :visited:hover, :visited:focus {
   text-decoration: underline;
   outline: none;
+}
+:link:focus img, :visited:focus img {
+  outline: dotted;
 }
 /* Blog listing styles */
 .blog {
@@ -181,9 +190,13 @@ footer {
 .toolbar-item:focus {
   text-decoration: none;
   box-shadow: 0 1px 4px #666;
+  color: #FFF;
 }
 .toolbar-item:active {
   box-shadow: 0 0 0 #666;
+}
+.toolbar-item:focus {
+  background: #48F;
 }
 .toolbar-item--disabled,
 .toolbar-item--disabled:hover,
@@ -196,8 +209,14 @@ footer {
 .toolbar-item--add {
   background: #5e9766;
 }
-.toolbar-button--remove {
-  background-color: #df3600;
+.toolbar-item--add:focus {
+  background: #0A0;
+}
+.toolbar-item--remove {
+  background-color: #cf3600;
+}
+.toolbar-item--remove:focus {
+  background: #F22;
 }
 /* A responsive image */
 .gallery img {
