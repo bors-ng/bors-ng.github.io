@@ -10,7 +10,7 @@ it's just a frontend that implements a particular workflow on top of it.
 So the first step of setting up bors is setting something up to automatically run your tests.
 It should be able to run the contents of a particular branch
 and report its results using a GitHub Status notification
-(the little <span style="color:orange" title="The build is in progress">&bull;</span>, <span style="color:green" title="Build succeeded">&#10003;</span>, or <span style="color:red" title="Build failed">&times;</span> next to a commit in the commits list).Newer CI systems, like Travis and AppVeyor, will do this by default. Jenkins and BuildBot have plugins for it.
+(the little <abbr style="color:orange" title="The build is in progress">&bull;</abbr>, <abbr style="color:green" title="Build succeeded">&#10003;</abbr>, or <abbr style="color:red" title="Build failed">&times;</abbr> next to a commit in the commits list).Newer CI systems, like Travis and AppVeyor, will do this by default. Jenkins and BuildBot have plugins for it.
 
 Your CI system should build the "staging" and "trying" branches, but should not build a branch called "staging.tmp".
 If your CI system is misconfigured to do this, bors should notify you. For example, add this to your .travis.yml or appveyor.yml file:
@@ -114,7 +114,7 @@ It might be one of these common problems:
     It doesn't need to be able to force-push to "master",
     but it needs to be able to regular-push a commit there.
 
-    You can check this in your repository's Settings tab, in the Branches section.
+    You can check this on GitHub in your repository's Settings tab, in the Branches section.
     The "master" branch can be protected,
     and since bors will usually be the only thing that commits directly to master,
     you can set it to require the "bors" Commit Status to push to master.
@@ -126,7 +126,7 @@ It might be one of these common problems:
   * When bors pushes a commit to the "staging" and "trying" branches,
     your CI system needs to run the test suite on that commit.
     You can test this by pushing a commit to one of those branches by hand and seeing if it runs.
-    
+
     Your CI system will probably work with GitHub either by registering a webhook (Settings -> Webhooks), an integration, or a service (Settings -> Integrations & Services).
     If there's nothing about your CI system in either of those two screens, it probably isn't set up right.
 
@@ -138,8 +138,9 @@ It might be one of these common problems:
 
     If you go to your repository's home page, change from "master" to the "staging" branch,
     then click the "**9,001** Commits" button, you'll see a list of commits.
-    The one at the top of the list should have one of the checkmark/crossmark/dot icons next to it.
-    You can click it to find out if your CI system is creating a commit status.
+    The one at the top of the list should have one of the checkmark/crossmark/dot icons next to it,
+    with a tooltip like "2/2 checks OK" or "Failure: The Travis CI build failed" or "Success: The Travis CI build passed".
+    If you click on it, it should link to your CI system.
 
     If this is the problem, bors will time out every time.
 
