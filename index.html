@@ -5,6 +5,8 @@ title: "bors &mdash; consistent automated testing"
 
 <nav><div class=wrapper>
 
+{% if paginator.page == 1 %}
+
 <h1 class="header header--allcaps">Consistent automated testing</h1>
 
 <p>Running tests on each developer's branch is not sufficent.
@@ -20,14 +22,21 @@ Doing so, as work continues unabated, will force a backlog to be enqueued.
 <p><a href="http://graydon2.dreamwidth.org/1597.html" title="The not-rocket-science rule of software engineering">This system should be automated</a>.
 The tool that automates this is called bors.
 
+<footer><div class=toolbar>
+<a class="toolbar-item toolbar-item--add" href="/getting-started/">Getting started</a>
+<a class="toolbar-item" href="https://bors-app.herokuapp.com">Log in to the dashboard</a>
+<a class="toolbar-item toolbar-item--remove" href="https://bors-app.herokuapp.com">Log in to the dashboard</a>
+</div></footer>
+
+{% else %}
+
+<h1>Page {{ paginator.page }}/{{ paginator.total_pages }}</h1>
+
+{% endif %}
+
 </div></nav>
 
 <div class=wrapper>
-
-<div class=toolbar>
-<a class="toolbar-item toolbar-item--add" href="/getting-started/">Getting started</a>
-<a class="toolbar-item" href="https://bors-app.herokuapp.com">Log in to the dashboard</a>
-</div>
 
 <section class=blog>
 {% for post in paginator.posts %}
@@ -43,7 +52,10 @@ The tool that automates this is called bors.
   {% include pagination.html %}
 </section>
 
-<section>
+</div>
+
+{% if paginator.page == 1 %}
+<footer><div class=wrapper>
   <h2 class=header>Quick command reference</h2>
   <dl>
     <dt>bors r+
@@ -59,6 +71,5 @@ The tool that automates this is called bors.
     <dt>bors delegate=USER1,USER2,USER3...
       <dd>Allow the listed users to r+ this pull request's changes.
   </dl>
-</section>
-
-</div>
+</div></footer>
+{% endif %}
