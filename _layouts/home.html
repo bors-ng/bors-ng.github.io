@@ -3,6 +3,7 @@
 {% include head.html %}
 <body>
 
+{% if paginator.page == 1 %}
   <header role="banner">
     <div class="wrapper">
       <img alt="bors" src="/images/a.svg" width=180 height=50>
@@ -11,6 +12,9 @@
       </span>
     </div>
   </header>
+{% else %}
+{% include header.html %}
+{% endif %}
 
   {{ content }}
 
