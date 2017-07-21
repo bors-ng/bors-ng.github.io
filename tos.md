@@ -6,7 +6,7 @@ layout: page
 # First, getting some things out of the way about this and other services
 
 These are the terms of service for the public instance of bors-ng,
-operating with the [bors](https://github.com/apps/bors) app account on GitHub and <https://bors-app.herokuapp.com>.
+operating with the [bors](https://github.com/apps/bors) app account on GitHub and <https://app.bors.tech/>.
 In classic contract convention, it'll be referred to as "The Service".
 
 By the way, the people operating The Service ("We"/"Us") can't absolve
