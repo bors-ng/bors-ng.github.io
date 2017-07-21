@@ -89,7 +89,7 @@ In there is a list of currently set up reviewers.
 Type the GitHub login name of the user you want to add,
 into the text field next to the "Add" button, then click it.
 
-[the Dashboard page]: https://bors-app.herokuapp.com/
+[the Dashboard page]: https://app.bors.tech/
 
 ## Delegating reviews
 
