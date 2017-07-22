@@ -106,6 +106,12 @@ It works like this:
 
 If some-user happens to be the pull request author, you can also use the shorthand `delegate+` command.
 
+# More info
+
+You can find more info in the [reference manual].
+
+[reference manual]: reference.md
+
 # If it doesn't work
 
 It might be one of these common problems:
