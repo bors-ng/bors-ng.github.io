@@ -1,4 +1,6 @@
-/* Should be used inside of the header, main, and footer */
+// always show the scrollbar on the side; avoids ugly jumping
+html{overflow-y:scroll}
+// Should be used inside of the header, main, and footer
 .wrapper {
   max-width: 800px;
   margin: 16px auto;
@@ -7,7 +9,7 @@
 .wrapper--mini {
   margin: 8px auto;
 }
-/* The header, nav bar, and footer */
+// The header, nav bar, and footer
 header, nav {
   border-bottom: solid 1px #CCC;
   overflow: hidden;
@@ -15,6 +17,7 @@ header, nav {
 #header-user {
   float: right;
   text-align: right;
+  display: block;
 }
 #header-user > a, #header-user img {
   vertical-align: middle;
@@ -30,6 +33,7 @@ nav h1 {
 }
 footer {
   border-top: solid 1px #CCC;
+  display: block;
 }
 /* Use underline-on-hover for links.
    This is used for consistency, since fill-link breaks outlines. */
@@ -58,6 +62,7 @@ footer {
 .blog {
   padding: 16px 0;
   overflow: hidden;
+  display: block;
 }
 .blog--item {
   margin-bottom: 32px;
@@ -94,7 +99,7 @@ footer {
 .clearfix {
   clear: both;
 }
-/* The tab bar. */
+// The tab bar.
 .tabs {
   margin: -1px auto;
   padding: 0 20px;
@@ -108,8 +113,8 @@ footer {
   clear: both;
 }
 .tab {
-  /* The 1px border on the left and right adds it up to 10px */
-  /* The top and bottom are 8px, even with the border, because of the -1px margin on tabs */
+  // The 1px border on the left and right adds it up to 10px
+  // The top and bottom are 8px, even with the border, because of the -1px margin on tabs
   padding: 8px 8px 8px 9px;
   float: left;
   border: solid 1px transparent;
@@ -124,7 +129,7 @@ footer {
 .tab--active {
   background: #FFF;
 }
-/* The fancy table. */
+// The fancy table.
 .table {
   width: 100%;
   border-collapse: separate;
@@ -158,7 +163,7 @@ footer {
   margin: -20em;
   padding: 20em;
 }
-/* The page headers. */
+// The page headers.
 .header {
   border-bottom: solid 1px #CCC;
   margin: 0;
@@ -168,9 +173,10 @@ footer {
 .header--allcaps {
   text-transform: uppercase;
 }
-/* The buttons and the bars that they go inside */
+// The buttons and the bars that they go inside
 .toolbar {
   margin: 32px -10px;
+  display: block;
 }
 .toolbar form {
   display: inline;
@@ -218,7 +224,7 @@ footer {
 .toolbar-item--remove:focus {
   background: #F22;
 }
-/* A responsive image */
+// A responsive image
 .gallery img {
   max-width: 100%;
 }
@@ -226,7 +232,7 @@ footer {
   margin: 8px 10px;
   border: solid 1px #EEE;
 }
-/* Code previews */
+// Code previews
 .highlighter-rouge {
   margin: 32px 0;
 }

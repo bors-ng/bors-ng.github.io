@@ -1,8 +1,19 @@
 <!DOCTYPE html>
 <html>
 {% include head.html %}
+<style>
+html{overflow-y:scroll}
+body{margin:0;font-family:sans-serif;line-height: 1.62;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+.wrapper{max-width:800px;margin:16px auto;padding:0 20px}
+.wrapper--mini{margin:8px auto}
+header,nav{border-bottom:solid 1px #CCC;overflow:hidden}
+nav{background-color:#EEE}
+h1{font-size:2em}
+.header{border-bottom:solid 1px #CCC;margin:0;margin-bottom:7px;padding-bottom:8px}
+.header--allcaps{text-transform:uppercase}
+#header-user,footer,.blog,.toolbar{display:none}
+</style>
 <body>
-
 {% if paginator.page == 1 %}
   <header role="banner">
     <div class="wrapper">
@@ -16,7 +27,76 @@
 {% include header.html %}
 {% endif %}
 
+<!-- http://dejanstojanovic.net/javascript/2017/may/non-blocking-css-load-on-the-page/ -->
+<noscript id=async-stylesheets>
+<link rel="stylesheet" href="{{ "/css/style-2.css" }}" type="text/css">
+</noscript>
+<script>
+document.addEventListener('DOMContentLoaded', function () {  
+    var noscriptContainer = document.getElementById("async-stylesheets");
+    if (noscriptContainer != null) {  
+        var container = document.createElement("div");  
+        container.innerHTML = noscriptContainer.textContent;  
+        document.body.appendChild(container);  
+    }  
+}, false);
+</script>
+
+<nav><div class=wrapper>
+
+{% if paginator.page == 1 %}
+
+<h1 class="header header--allcaps">Consistent Automated Testing</h1>
+  
+<p>Automate the consolidation of git branches submitted by developers and test the merge results with your CI system (Travis CI, BuildBot, etc.) before commiting to the production master branch.
+
+<p>Running tests on each developer's branch is not sufficent.
+They may <a href="/essay/2017/02/02/pitch/">conflict in a semantic way</a>
+that causes the master branch to fail when merged.
+Additional work that is built on such a broken master branch is tainted,
+unable to tell which failures are the result of an existing bug or a new one.
+
+<p>Instead, the combined system must be tested, as a whole,
+before the work becomes a part of the master branch which will form the basis of future work.
+Doing so, as work continues unabated, will force a backlog to be enqueued.
+
+<p><a href="http://graydon2.dreamwidth.org/1597.html" title="The not-rocket-science rule of software engineering">This system should be automated</a>.
+The tool that automates this is called bors.
+
+<footer><div class=toolbar>
+<a class="toolbar-item toolbar-item--add" href="/getting-started/">Getting started</a>
+<a class="toolbar-item" href="https://app.bors.tech/">Log in to the dashboard</a>
+</div></footer>
+
+{% else %}
+
+<h1>Page {{ paginator.page }}/{{ paginator.total_pages }}</h1>
+
+{% endif %}
+
+</div></nav>
+
   {{ content }}
+
+{% if paginator.page == 1 %}
+<footer><div class=wrapper>
+  <h2 class=header>Quick command reference</h2>
+  <dl>
+    <dt>bors r+
+      <dd>Run the test suite, and push to master if it passes. Short for "reviewed: looks good."
+    <dt>bors r=USER1,USER2,USER3...
+      <dd>Same as r+, but the "reviewer" in the commit log will be recorded as the user(s) given as the argument.
+    <dt>bors r-
+      <dd>Cancel an r+ or r=.
+    <dt>bors try
+      <dd>Run the test suite, without pushing to master.
+    <dt>bors delegate+
+      <dd>Allow the pull request author to r+ their changes.
+    <dt>bors delegate=USER1,USER2,USER3...
+      <dd>Allow the listed users to r+ this pull request's changes.
+  </dl>
+</div></footer>
+{% endif %}
 
   {% include footer.html %}
 </body>

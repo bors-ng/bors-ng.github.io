@@ -7,5 +7,7 @@
     <link rel="shortcut icon" type="image/svg+xml" title="bors eye" href="/images/i.svg">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ "/css/style.css" }}" type="text/css">
+    {% if page.layout != "home" %}
+    <link rel="stylesheet" href="{{ "/css/style-2.css" }}" type="text/css">
+    {% endif %}
 </head>
