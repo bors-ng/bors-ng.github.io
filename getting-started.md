@@ -89,7 +89,7 @@ In there is a list of currently set up reviewers.
 Type the GitHub login name of the user you want to add,
 into the text field next to the "Add" button, then click it.
 
-[the Dashboard page]: https://bors-app.herokuapp.com/
+[the Dashboard page]: https://app.bors.tech/
 
 ## Delegating reviews
 
@@ -105,6 +105,12 @@ It works like this:
 > * @bors[bot]: Added to queue
 
 If some-user happens to be the pull request author, you can also use the shorthand `delegate+` command.
+
+# More info
+
+You can find more info in the [reference manual].
+
+[reference manual]: reference.md
 
 # If it doesn't work
 

@@ -1,5 +1,6 @@
 title: "bors-ng"
 description: "A merge bot for GitHub pull requests"
+url: "https://bors.tech"
 
 permalink: pretty
 paginate: 10
