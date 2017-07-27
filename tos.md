@@ -25,12 +25,15 @@ you will need to comply with both contacts.
 * By enabling The Service on Your GitHub repository,
   You give The Service permission to download Your GitHub repository's content,
   and to add content to the repository.
+* Because you are not allowed to use The Service with private repositories,
+  we may look at the contents of your GitHub repository for any purpose,
+  but we will not modify your repository except to fulfill an explicit request from an authorized user.
 
 
 # You are not allowed to hack The Service
 
 * You're not allowed to use The Service to amplify or relay excessive amount of bulk traffic,
-  like denials-of-service and flooding.
+  like denials-of-service, flooding, and spam.
 * You're not allowed to do anything that You have a reason to expect will interfere with others using The Service.
 * You're not allowed to impersonate other users,
   or bypass the bors-ng permissions system to do things that You have a reason to expect You aren't supposed to be able to do.
@@ -41,13 +44,14 @@ you will need to comply with both contacts.
 * The Service is hosted in the US, and We will comply with US law.
 * You are not allowed to log in to it unless You are over 13 years of age.
   We do not target The Service at children, or allow children under 13 to use it.
-  
+  If we find out children are using it, we'll block them and report this to GitHub,
+  who doesn't allow children either.
 
-# Enforecment
+# Enforcement
 
 * If any part of this agreement is violated,
   we may block the user account or GitHub repository that is responsible for the violation,
-  or use heuristic methods such as IP, traffic shape, or baesian filters to attempt to block violations.
+  or we may use heuristic methods such as IP, traffic shape, or bayesian filters to attempt to block violations.
 * You are responsible for any conduct that is done with your account.
   Keep your password secure.
 
