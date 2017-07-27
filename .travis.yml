@@ -1,0 +1,6 @@
+language: ruby
+sudo: false
+
+script:
+- gem install html-proofer 
+- htmlproofer ./_site/ --only-4xx
