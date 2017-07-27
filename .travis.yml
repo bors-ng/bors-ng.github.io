@@ -1,6 +1,19 @@
 language: ruby
 sudo: false
 
+install:
+- bundle install
+- gem install html-proofer
+
 script:
-- gem install html-proofer 
+- bundle exec jekyll build
 - htmlproofer ./_site/ --only-4xx
+
+branches:
+  only:
+  - master
+  - staging
+  - trying
+
+notifications:
+  email: false
