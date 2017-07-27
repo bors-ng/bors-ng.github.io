@@ -1,2 +1,2 @@
-# This file is really more for muscle-memory than anything else
 block-labels = [ "S-do-not-merge-yet" ]
+status = [ "continuous-integration/travis-ci/push" ]
