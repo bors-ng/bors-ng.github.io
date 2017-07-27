@@ -26,8 +26,9 @@ you will need to comply with both contacts.
   You give The Service permission to download Your GitHub repository's content,
   and to add content to the repository.
 * Because you are not allowed to use The Service with private repositories,
-  we may look at the contents of your GitHub repository for any purpose,
-  but we will not modify your repository except to fulfill an explicit request from an authorized user.
+  We can look at the contents of your repository for any reason
+  (subject to GitHub's ToS and whatever license your repository carries),
+  but We will not modify your repository except to fulfill an explicit request from an authorized user.
 
 
 # You are not allowed to hack The Service
