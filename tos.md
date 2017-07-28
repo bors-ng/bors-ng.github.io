@@ -3,11 +3,14 @@ title: Terms of Service
 layout: page
 ---
 
+__Effective date: July 2017__.
+
 # First, getting some things out of the way about this and other services
 
 These are the terms of service for the public instance of bors-ng,
 operating with the [bors](https://github.com/apps/bors) app account on GitHub and <https://app.bors.tech/>.
-In classic contract convention, it'll be referred to as "The Service".
+In classic contract convention, it'll be referred to as "The Service".  Any usage or participation of The Service
+will constitute acceptance of this agreement.
 
 By the way, the people operating The Service ("We"/"Us") can't absolve
 the person who interacts with The Service ("You") of [GitHub's terms of service].
@@ -57,7 +60,7 @@ you will need to comply with both contacts.
   Keep your password secure.
 
 
-# No warrantly, no SLA
+# No warranty, no SLA
 
 * We do not provide a warranty for The Service,
   or guarantee any level of uptime.
@@ -71,3 +74,4 @@ you will need to comply with both contacts.
   which will include IP addresses and (potentially) the complete contents of network traffic.
   They will not be kept for more than a month.
 * We may produce, and may publish, non-personally-identifying statistics based on the logs.
+
