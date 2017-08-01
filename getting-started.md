@@ -1,5 +1,6 @@
 ---
 title: Getting started
+description: How to set up bors-ng on your GitHub repo
 layout: page
 ---
 
