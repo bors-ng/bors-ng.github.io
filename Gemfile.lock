@@ -198,3 +198,4 @@ DEPENDENCIES
   github-pages
   jekyll-paginate
   jekyll-seo-tag
+  jekyll-sitemap
