@@ -154,4 +154,4 @@ It might be one of these common problems:
   * The bors integration needs to be enabled on your GitHub repo.
     If this is the problem, bors will not respond to commands.
 
-You can also get help on [our web-connected IRC channel](https://chat.mibbit.com/?server=irc.mozilla.org&channel=%23bors), or you can [file an issue](https://github.com/bors-ng/bors-ng/issues/new). If it turns out to be a bug, thanks! We won't chew you out if it turns out to be one of those problems after all.
+You can also get help on [our forum](https://forum.bors.tech). We won't chew you out if it turns out to be one of those problems after all.
