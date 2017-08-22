@@ -1,1 +1,2 @@
 Sitemap: https://bors.tech/sitemap.xml
+Host: bors.tech
