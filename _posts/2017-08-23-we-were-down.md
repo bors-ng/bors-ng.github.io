@@ -7,7 +7,7 @@ redirect_from:
   - /pants-on-head-stupid,/downtime,/retrospective/2017/08/24/we-were-down/
 ---
 
-We screwed up and pushed [a broken pull request](https://github.com/bors-ng/bors-ng/pull/275) into production.
+On August 23, we screwed up and pushed [a broken pull request](https://github.com/bors-ng/bors-ng/pull/275) into production.
 After noticing an elevated number of crashing pull requests,
 I found the difference between the unit test harness and production that allowed it to get that far.
 
