@@ -1,6 +1,6 @@
 ---
 title: Downtime from 5:47 PM to 2:00 AM UTC the next day
-date: 2017-09-03 02:00:00
+date: 2017-08-24 02:00:00
 summary: We screwed up and pushd a broken pull request into production
 categories: pants-on-head-stupid, downtime, retrospective
 ---
