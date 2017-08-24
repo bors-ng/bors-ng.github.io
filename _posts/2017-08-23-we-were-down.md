@@ -13,7 +13,7 @@ Basically, every time you `r+`-ed a pull request, it would not actually start an
 In the "History" tab on the dashboard, this would show up as a crash dump:
 
 ```
-{%UndefinedFunctionError{arity: 2, exports: nil,
+{ %UndefinedFunctionError{arity: 2, exports: nil,
   function: :fetch, module: BorsNG.Database.User,
   reason: "BorsNG.Database.User does not implement the Access behaviour"},
  [{BorsNG.Database.User, :fetch,
