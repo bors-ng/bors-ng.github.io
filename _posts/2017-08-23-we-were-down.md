@@ -68,3 +68,5 @@ Oddly enough, it did not get caught by Dialyzer.
 [Integration tests], where the actual GitHub API gets involved, need to happen.
 That would've caught this.
 It's doable, but not implemented because writing a test suite that has to run with both real GitHub and real Bors-NG are going to be complicated.
+
+[Integration tests]: https://github.com/bors-ng/bors-ng/issues/282
