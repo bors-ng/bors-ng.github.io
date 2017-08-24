@@ -2,7 +2,9 @@
 title: Downtime from 5:47 PM to 2:00 AM UTC the next day
 date: 2017-08-24 02:00:00
 summary: We screwed up and pushd a broken pull request into production
-categories: pants-on-head-stupid, downtime, retrospective
+categories: pants-on-head-stupid downtime retrospective
+redirect_from:
+  - /pants-on-head-stupid,/downtime,/retrospective/2017/08/24/we-were-down/
 ---
 
 We screwed up and pushed [a broken pull request](https://github.com/bors-ng/bors-ng/pull/275) into production.
