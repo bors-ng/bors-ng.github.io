@@ -12,15 +12,33 @@ h1{font-size:2em}
 .header{border-bottom:solid 1px #CCC;margin:0;margin-bottom:7px;padding-bottom:8px}
 .header--allcaps{text-transform:uppercase}
 #header-user,footer,.blog,.toolbar{display:none}
+#header-logo{vertical-align:middle;display:inline-block;height:50px;line-height:50px}
+@media (max-width: 699px) {
+  #header-logo {
+    width: auto; height: auto;
+    display: block;
+    vertical-align: baseline;
+    line-height: inherit;
+  }
+  #header-logo img {
+    width: 90px;
+    height: 25px;
+  }
+  .header-home .wrapper {
+    padding: 8px 20px;
+  }
+}
 </style>
 <body>
 {% if paginator.page == 1 %}
-  <header role="banner">
+  <header role="banner" class=header-home>
     <div class="wrapper">
-      <img alt="bors" src="/images/a.svg" width=180 height=50>
-      <span id=header-user>
+      <div id=header-logo>
+        <img alt="bors" src="/images/a.svg" width=180 height=50>
+      </div>
+      <div id=header-user>
         {% include navigation.html %}
-      </span>
+      </div>
     </div>
   </header>
 {% else %}
@@ -63,11 +81,6 @@ Doing so, as work continues unabated, will force a backlog to be enqueued.
 <p><a href="http://graydon2.dreamwidth.org/1597.html" title="The not-rocket-science rule of software engineering">This system should be automated</a>.
 The tool that automates this is called bors.
 
-<footer><div class=toolbar>
-<a class="toolbar-item toolbar-item--add" href="/getting-started/">Getting started</a>
-<a class="toolbar-item" href="https://app.bors.tech/">Log in to the dashboard</a>
-</div></footer>
-
 {% else %}
 
 <h1>Page {{ paginator.page }}/{{ paginator.total_pages }}</h1>
@@ -80,21 +93,7 @@ The tool that automates this is called bors.
 
 {% if paginator.page == 1 %}
 <footer><div class=wrapper>
-  <h2 class=header>Quick command reference</h2>
-  <dl>
-    <dt>bors r+
-      <dd>Run the test suite, and push to master if it passes. Short for "reviewed: looks good."
-    <dt>bors r=USER1,USER2,USER3...
-      <dd>Same as r+, but the "reviewer" in the commit log will be recorded as the user(s) given as the argument.
-    <dt>bors r-
-      <dd>Cancel an r+ or r=.
-    <dt>bors try
-      <dd>Run the test suite, without pushing to master.
-    <dt>bors delegate+
-      <dd>Allow the pull request author to r+ their changes.
-    <dt>bors delegate=USER1,USER2,USER3...
-      <dd>Allow the listed users to r+ this pull request's changes.
-  </dl>
+  <a href="/documentation/reference/">❓️ Command reference</a>
 </div></footer>
 {% endif %}
 

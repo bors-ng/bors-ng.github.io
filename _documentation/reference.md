@@ -1,6 +1,7 @@
 ---
 title: Reference manual
-template: page
+layout: page
+redirect_from: /reference/
 ---
 
 ## Commands (pull request comments)

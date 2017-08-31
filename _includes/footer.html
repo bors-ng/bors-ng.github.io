@@ -1,5 +1,13 @@
 <footer role=note>
   <p class=wrapper>
-    <a href="{{ site.github.repository_url }}/edit/master/{{ page.path }}">✏ Edit this page on GitHub</a>
+  {% if paginator.previous_page %}
+    <a href="{{ site.github.repository_url }}/edit/master/index.html">✏️ Edit this page on GitHub</a>
+  {% else %}
+    <a href="{{ site.github.repository_url }}/edit/master/{{ page.path }}">✏️ Edit this page on GitHub</a>
+  {% endif %}
+    <span style="float:right">
+      <a href="/feed.xml"><img alt="RSS" src="/images/rss.svg" width=25 height=25></a>
+      <a href="https://github.com/bors-ng"><img title="Fork me on GitHub!" alt="GitHub" src="/images/github.svg" width=25 height=25></a>
+    </span>
   </p>
 </footer>

@@ -2,6 +2,7 @@
 title: Getting started
 description: How to set up bors-ng on your GitHub repo
 layout: page
+redirect_from: /getting-started/
 ---
 
 # Setting up bors
