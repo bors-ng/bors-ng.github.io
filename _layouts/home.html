@@ -13,17 +13,32 @@ h1{font-size:2em}
 .header--allcaps{text-transform:uppercase}
 #header-user,footer,.blog,.toolbar{display:none}
 #header-logo{vertical-align:middle;display:inline-block;height:50px;line-height:50px}
+@media (max-width: 699px) {
+  #header-logo {
+    width: auto; height: auto;
+    display: block;
+    vertical-align: baseline;
+    line-height: inherit;
+  }
+  #header-logo img {
+    width: 90px;
+    height: 25px;
+  }
+  .header-home .wrapper {
+    padding: 8px 20px;
+  }
+}
 </style>
 <body>
 {% if paginator.page == 1 %}
   <header role="banner" class=header-home>
     <div class="wrapper">
-      <span id=header-logo>
+      <div id=header-logo>
         <img alt="bors" src="/images/a.svg" width=180 height=50>
-      </span>
-      <span id=header-user>
+      </div>
+      <div id=header-user>
         {% include navigation.html %}
-      </span>
+      </div>
     </div>
   </header>
 {% else %}

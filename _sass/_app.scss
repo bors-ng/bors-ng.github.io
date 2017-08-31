@@ -17,23 +17,20 @@ header {
   position: relative;
   overflow: hidden;
 }
+
+.header-home {
+  height: auto;
+}
 #header-user {
-  position: absolute;
-  top: 50%;
-  margin-top: -12px;
-  padding-left: 16px;
-  .header-home & {
-    margin-top: -25px;
-    padding-left: 32px;
-  }
+  display: block;
+}
 
+#header-user {
   a, b {
-    padding: 0 8px;
-    .header-home & {
-      padding: 0 32px;
-    }
+    padding: 8px 8px;
+    color: #333;
+    white-space: nowrap;
   }
-
   a {
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
     &:hover, &:active, &:focus {
@@ -43,17 +40,37 @@ header {
     }
   }
 }
-#header-logo, #header-user, #header-user a, #header-user b {
-  vertical-align: middle;
-  line-height: 25px;
-  height: 25px;
-  display: inline-block;
-  color: #333;
-  .header-home & {
-    height: 50px;
-    line-height: 50px;
+
+@media (min-width: 700px) {
+  #header-user {
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    padding-left: 16px;
+    .header-home & {
+      margin-top: -25px;
+      padding-left: 32px;
+    }
+
+    a, b {
+      padding: 0 8px;
+      .header-home & {
+        padding: 0 32px;
+      }
+    }
+  }
+  #header-logo, #header-user, #header-user a, #header-user b {
+    vertical-align: middle;
+    line-height: 25px;
+    height: 25px;
+    display: inline-block;
+    .header-home & {
+      height: 50px;
+      line-height: 50px;
+    }
   }
 }
+
 nav {
   background-color: #EEE;
 }
