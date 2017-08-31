@@ -14,3 +14,7 @@ gems:
 - jekyll-seo-tag
 - jekyll-sitemap
 - jekyll-redirect-from
+
+collections:
+  documentation:
+    output: true

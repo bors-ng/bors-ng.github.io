@@ -3,27 +3,56 @@ html{overflow-y:scroll}
 // Should be used inside of the header, main, and footer
 .wrapper {
   max-width: 800px;
-  margin: 16px auto;
-  padding: 0 20px;
+  margin: 0 auto;
+  padding: 16px 20px;
 }
 .wrapper--mini {
-  margin: 8px auto;
+  padding: 8px 20px;
 }
 // The header, nav bar, and footer
 header, nav {
   border-bottom: solid 1px #CCC;
+}
+header {
+  position: relative;
   overflow: hidden;
 }
 #header-user {
-  float: right;
-  text-align: right;
-  display: block;
+  position: absolute;
+  top: 50%;
+  margin-top: -12px;
+  padding-left: 16px;
+  .header-home & {
+    margin-top: -25px;
+    padding-left: 32px;
+  }
+
+  a, b {
+    padding: 0 8px;
+    .header-home & {
+      padding: 0 32px;
+    }
+  }
+
+  a {
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+    &:hover, &:active, &:focus {
+      color: #fff;
+      background: #000;
+      text-decoration: none;
+    }
+  }
 }
-#header-user > a, #header-user img, #header-logo {
+#header-logo, #header-user, #header-user a, #header-user b {
   vertical-align: middle;
   line-height: 25px;
   height: 25px;
   display: inline-block;
+  color: #333;
+  .header-home & {
+    height: 50px;
+    line-height: 50px;
+  }
 }
 nav {
   background-color: #EEE;
@@ -102,8 +131,9 @@ footer {
 // The tab bar.
 .tabs {
   margin: -1px auto;
+  line-height: 1.15;
   padding: 0 20px;
-  max-width: 1000px;
+  max-width: 800px;
 }
 .tabs::after {
   content: ". . . . . . . . . . ";
