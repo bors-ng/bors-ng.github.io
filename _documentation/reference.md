@@ -14,6 +14,7 @@ redirect_from: /reference/
 | bors try | Run the test suite, without pushing to master.
 | bors delegate+ | Allow the pull request author to r+ their changes.
 | bors delegate=<list> | Allow the listed users to r+ this pull request's changes.
+| bors ping | Will respond if bors is set up.
 
 Note that the keyword (`bors`) may be separated with a space or a colon. That is, `bors try` and `bors: try` are the same thing.
 
