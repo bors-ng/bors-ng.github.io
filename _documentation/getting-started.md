@@ -112,7 +112,7 @@ If some-user happens to be the pull request author, you can also use the shortha
 
 You can find more info in the [reference manual].
 
-[reference manual]: reference.md
+[reference manual]: //bors.tech/documentation/reference/
 
 # If it doesn't work
 
