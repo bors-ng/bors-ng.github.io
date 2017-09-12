@@ -38,12 +38,13 @@ It's a webhook, which means it has far lower latency than Bors-OG,
 and it doesn't hit GitHub's rate limit as quickly as the polling approach.
 It helps that homu maintains a database, so it doesn't have to fetch as much information to do anything.
 
-[The Rust community organization have a fork of Servo's Homu, which they renamed bors][rust-community/bors].
+The Rust community organization have a fork of Servo's Homu, which they renamed bors\*.
 It's Homu, and Rust isn't actually using it (they're using Servo's fork).
+
+\* **Update 12 September 2017:** This repository was deleted because it was unused.
 
 [barosl/homu]: https://github.com/barosl/homu
 [servo/homu]: https://github.com/servo/homu
-[rust-community/bors]: https://github.com/rust-community/bors
 
 
 So where does Bors-NG fit into all of this?
