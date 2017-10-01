@@ -9,7 +9,7 @@ These steps can be done immediately after opening the TMIB pull request:
 
 - [ ] Update the month in the `date:` part
 
-- [ ] Update the month in the `description:`
+- [ ] Update the month in the `summary:`
 
 - [ ] Update the URL in the "last month" PR link
 
@@ -26,3 +26,5 @@ And, these should be done last thing:
 - [ ] Update the PR count in the PR paragraph
 
 - [ ] Create, and link in, next month's PR, so that the published edition links to the next one
+
+- [ ] Write a few useful tidbits in the summary: part
