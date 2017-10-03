@@ -28,3 +28,7 @@ And, these should be done last thing:
 - [ ] Create, and link in, next month's PR, so that the published edition links to the next one
 
 - [ ] Write a few useful tidbits in the summary: part
+
+And publish to third-party syndication services:
+
+- [ElixirStatus](https://elixirstatus.com): copy the summary into their description box, followed by the post's URL
