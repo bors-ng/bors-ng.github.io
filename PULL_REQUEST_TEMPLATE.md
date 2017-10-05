@@ -32,3 +32,4 @@ And, these should be done last thing:
 And publish to third-party syndication services:
 
 - [ElixirStatus](https://elixirstatus.com): copy the summary into their description box, followed by the post's URL
+- [dev.to](https://dev.to): approve the draft after the RSS system pulls it in
