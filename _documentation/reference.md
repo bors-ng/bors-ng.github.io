@@ -9,14 +9,49 @@ redirect_from: /reference/
 | Syntax | Description |
 |--------|-------------|
 | bors r+ | Run the test suite, and push to master if it passes. Short for "reviewed: looks good."
-| bors r=<list> | Same as r+, but the "reviewer" in the commit log will be recorded as the user(s) given as the argument.
+| bors r=[list] | Same as r+, but the "reviewer" in the commit log will be recorded as the user(s) given as the argument.
 | bors r- | Cancel an r+ or r=.
 | bors try | Run the test suite, without pushing to master.
 | bors delegate+ | Allow the pull request author to r+ their changes.
-| bors delegate=<list> | Allow the listed users to r+ this pull request's changes.
+| bors delegate=[list] | Allow the listed users to r+ this pull request's changes.
 | bors ping | Will respond if bors is set up.
 
-Note that the keyword (`bors`) may be separated with a space or a colon. That is, `bors try` and `bors: try` are the same thing.
+The keyword (`bors`) may be separated with a space or a colon. That is, `bors try` and `bors: try` are the same thing.
+Also, the command will be recognized if, and only if, the word "bors" is at the beginning of a line.
+
+This will be recognized as a command:
+
+    > Like the other person said:
+    bors r+
+
+This will not be recognized as a command:
+
+    > Like the other person said:
+    > bors r+
+
+And if you want to copy the above table into a markdown comment, make sure that you include the (optional) pipes at the beginning of every line, because this [will be recognized as a bunch of commands](https://github.com/behnam/rust-unic/pull/172), one after the other:
+
+    Syntax | Description
+    -------|------------
+    bors r+ | Run the test suite
+    bors r=[list] | Same as r+, but the "reviewer" will come from the argument
+    bors r- | Cancel an r+ or r=
+    bors try | Run the test suite without pushing
+    bors delegate+ | Allow the pull request author to r+
+    bors delegate=[list] | Allow the listed users to r+
+    bors ping | Will respond if bors is set up
+
+On the other hand, bors will ignore this table if it's given [like this](https://github.com/notriddle/test_repo/pull/118#issuecomment-334333878) (with the optional pipes at the beginning of every line):
+
+    | Syntax | Description
+    |--------|------------
+    | bors r+ | Run the test suite
+    | bors r=[list] | Same as r+, but the "reviewer" will come from the argument
+    | bors r- | Cancel an r+ or r=
+    | bors try | Run the test suite without pushing
+    | bors delegate+ | Allow the pull request author to r+
+    | bors delegate=[list] | Allow the listed users to r+
+    | bors ping | Will respond if bors is set up
 
 ## Configuration (bors.toml)
 
