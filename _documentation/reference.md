@@ -29,7 +29,7 @@ This will not be recognized as a command:
     > Like the other person said:
     > bors r+
 
-And if you want to copy the above table into a markdown comment, make sure that you include the (optional) pipes at the beginning of every line, because this [will be recognized as a bunch of commands](https://github.com/behnam/rust-unic/pull/172), one after the other:
+And if you want to copy the above table into a markdown comment, make sure that you include the (optional) pipes at the beginning of every line, because [this will be recognized as a bunch of commands](https://github.com/behnam/rust-unic/pull/172#issuecomment-334326508), one after the other:
 
     Syntax | Description
     -------|------------
@@ -41,7 +41,7 @@ And if you want to copy the above table into a markdown comment, make sure that 
     bors delegate=[list] | Allow the listed users to r+
     bors ping | Will respond if bors is set up
 
-On the other hand, bors will ignore this table if it's given [like this](https://github.com/notriddle/test_repo/pull/118#issuecomment-334333878) (with the optional pipes at the beginning of every line):
+On the other hand, bors will ignore this table if it's given [like this (with the optional pipes at the beginning of every line)](https://github.com/notriddle/test_repo/pull/118#issuecomment-334333878):
 
     | Syntax | Description
     |--------|------------
