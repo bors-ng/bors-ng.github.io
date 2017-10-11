@@ -4,6 +4,7 @@ layout: page
 redirect_from:
  - /reference/
  - /documentation/reference/
+permalink: /documentation/
 ---
 
 ## Commands (pull request comments)
