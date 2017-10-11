@@ -1,7 +1,9 @@
 ---
 title: Reference manual
 layout: page
-redirect_from: /reference/
+redirect_from:
+ - /reference/
+ - /documentation/reference/
 ---
 
 ## Commands (pull request comments)
