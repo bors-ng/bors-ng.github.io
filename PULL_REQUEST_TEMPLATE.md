@@ -1,3 +1,5 @@
+<!-- this template should be used for TMIB pull requests; other pull requests should not use it -->
+
 Want to help out with writing TMIB but don't have write access to the repo?
 [Go here](https://github.com/bors-ng/bors-ng.github.io/blob/tmib-<ISSUE NUMBER>/_posts/<ISSUE PUBLISH DATE>-tmib-<ISSUE NUMBER>.md), then click the pencil button. That'll open a pull request for the in-progress edition of TMIB.
 
@@ -15,9 +17,9 @@ These steps can be done immediately after opening the TMIB pull request:
 
 These steps need to be done as the month rolls along, though they should probably be proofread at the end:
 
-- [ ] Generate the "notable additions" list
+- [ ] Write the "notable additions" list
 
-- [ ] Generate the "new contributors" list
+- [ ] Write the "new contributors" list
 
 - [ ] Find a new featured user
 
@@ -31,5 +33,5 @@ And, these should be done last thing:
 
 And publish to third-party syndication services:
 
-- [ElixirStatus](https://elixirstatus.com): copy the summary into their description box, followed by the post's URL
-- [dev.to](https://dev.to): approve the draft after the RSS system pulls it in
+- [ElixirStatus](https://elixirstatus.com): copy the summary into their description box, followed by the post's URL; see <http://elixirstatus.com/p/doG2-ninth-monthly-bors-newsletter> for an example of how it should look
+- [dev.to](https://dev.to): @notriddle should approve the draft after the RSS system pulls it in
