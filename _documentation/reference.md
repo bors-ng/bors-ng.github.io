@@ -5,6 +5,7 @@ redirect_from:
  - /reference/
  - /documentation/reference/
 permalink: /documentation/
+description: All of the commands and configuration options supported by bors-ng
 ---
 
 ## Commands (pull request comments)
