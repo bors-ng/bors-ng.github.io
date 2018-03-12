@@ -56,16 +56,21 @@ On the other hand, bors will ignore this table if it's given [like this (with th
     | bors delegate+ | Allow the pull request author to r+
     | bors delegate=[list] | Allow the listed users to r+
     | bors ping | Will respond if bors is set up
+    
+### Note on rejected code reviews
+
+If any member of the project requests changes, their review must be dismissed before Bors will merge the branch in to master.
 
 ## Configuration (bors.toml)
 
-| Name         | Type     | Description |
-|--------------|----------|-------------|
-| status       | [string] | List of commit statuses that must pass on the merge commit before it is pushed to master.
-| block_labels | [string] | List of PR labels that may not be attached to a PR when it is r+-ed.
-| pr_status    | [string] | List of commit statuses that must pass on the PR commit when it is r+-ed.
-| timeout_sec  | integer  | Number of seconds from when a merge commit is created to when its statuses must pass.
-| cut_body_after | string | A marker in the PR description that indicates boilerplate that does not belong in the commit message.
-| delete_merged_branches | boolean | If set to true, and if the PR branch is on the same repository that bors-ng itself is on, the branch will be deleted.
+| Name                   | Type     | Description |
+|------------------------|----------|-------------|
+| status                 | [string] | List of commit statuses that must pass on the merge commit before it is pushed to master.
+| block_labels           | [string] | List of PR labels that may not be attached to a PR when it is r+-ed.
+| pr_status              | [string] | List of commit statuses that must pass on the PR commit when it is r+-ed.
+| timeout_sec            | integer  | Number of seconds from when a merge commit is created to when its statuses must pass.
+| required_approvals     | integer  | Number of project members who must approve the PR before it is pushed to master.
+| cut_body_after         | string   | A marker in the PR description that indicates boilerplate that does not belong in the commit message.
+| delete_merged_branches | boolean  | If set to true, and if the PR branch is on the same repository that bors-ng itself is on, the branch will be deleted.
 
 Note that underscores (`_`) and hyphens (`-`) are interchangable in configuration option names. That is, `pr_status` and `pr-status` are the same thing.
