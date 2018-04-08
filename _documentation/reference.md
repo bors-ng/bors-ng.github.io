@@ -72,5 +72,19 @@ If any member of the project requests changes, their review must be dismissed be
 | required_approvals     | integer    | Number of project members who must approve the PR (using GitHub Reviews) before it is pushed to master.
 | cut_body_after         | string     | A marker in the PR description that indicates boilerplate that does not belong in the commit message.
 | delete_merged_branches | boolean    | If set to true, and if the PR branch is on the same repository that bors-ng itself is on, the branch will be deleted.
+| committer.name         | string     | Set both committer details to have merge commits show up as authored by a specific user. |
+| committer.email        | string     | |
 
 Note that underscores (`_`) and hyphens (`-`) are interchangable in configuration option names. That is, `pr_status` and `pr-status` are the same thing.
+
+The committer options, if provided, should be given as a table.  They can be written as either of the following:
+
+```toml
+# short form
+committer = { name = "King Ban", email = "ban@example.com" }
+
+# long form
+[committer]
+name = "King Ban"
+email = "ban@example.com"
+```
