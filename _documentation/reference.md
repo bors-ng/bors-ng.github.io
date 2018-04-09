@@ -1,5 +1,5 @@
 ---
-title: Reference manual
+title: Reference
 layout: page
 redirect_from:
  - /reference/
