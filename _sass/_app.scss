@@ -1,5 +1,17 @@
 // always show the scrollbar on the side; avoids ugly jumping
-html{overflow-y:scroll}
+// stick the footer at the bottom of the page, even if it isn't that tall
+html {
+  overflow-y: scroll;
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+main {
+  flex-grow: 1;
+}
 // Should be used inside of the header, main, and footer
 .wrapper {
   max-width: 800px;
