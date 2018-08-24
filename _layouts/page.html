@@ -6,10 +6,10 @@ layout: default
     <div class=wrapper>
       <h1>{{ page.collection | capitalize }}</h1>
     </div>
-    <div class="tabs" role=tabs>
+    <div class="tabs" role=navigation>
     {% for item in site[page.collection] %}
       {% if item.url == page.url %}
-      <a class="tab tab--active">{{ item.title }}</a>
+      <a class="tab tab--active" aria-selected=true>{{ item.title }}</a>
       {% else %}
       <a class="tab" href="{{ item.url }}">{{ item.title }}</a>
       {% endif %}
