@@ -4,6 +4,7 @@ url: "https://bors.tech"
 
 permalink: pretty
 paginate: 10
+paginate_path: "/page:num/"
 
 kramdown:
   input: GFM
