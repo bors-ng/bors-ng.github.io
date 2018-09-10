@@ -38,6 +38,7 @@ header {
 }
 
 #header-user {
+  margin: 0 -8px;
   a, b {
     padding: 8px 8px;
     color: #333;
@@ -58,6 +59,8 @@ header {
     position: absolute;
     top: 50%;
     margin-top: -12px;
+    margin-left: 0;
+    margin-right: 0;
     padding-left: 16px;
     .header-home & {
       margin-top: -25px;
