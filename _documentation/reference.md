@@ -4,6 +4,7 @@ layout: page
 redirect_from:
  - /reference/
  - /documentation/reference/
+ - /documentation/dev/
 permalink: /documentation/
 description: All of the commands and configuration options supported by bors-ng
 ---
@@ -91,3 +92,10 @@ committer = { name = "King Ban", email = "ban@example.com" }
 name = "King Ban"
 email = "ban@example.com"
 ```
+
+# Development resources
+
+* <https://hexdocs.pm/elixir/syntax-reference.html>: Elixir language documentation
+* <https://hexdocs.pm/phoenix/overview.html>: Phoenix web framework documentation
+* <https://developer.github.com/apps/>: GitHub API documentation
+* <https://bors.tech/devdocs/bors-ng/hacking.html>: Bors-NG source-level documentation
