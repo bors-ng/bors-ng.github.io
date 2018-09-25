@@ -2,7 +2,7 @@
 layout:     post
 title:      How bundler combines bors-ng with their own welcome bot 
 date:       2018-09-26 00:00:00
-summary:    The central principle of bors-ng is to be an easy-to-set-up implementation of an uncomplicated continuous testing regime, and to do that one thing well. It doesn’t take care of deployment, it doesn’t sort your issues, it doesn’t update your dependencies, and it doesn’t post a comment on all first-time contributors’ pull requests.
+summary:    Running more than one GitHub app with the same name
 categories: writeup
 ---
 
@@ -29,3 +29,7 @@ Making that work required three changes to the usual bors-ng setup.
 Unfortunately, even though Zapier is nice and flexible, it required them to set all of the headers that needed to be re-sent one at a time: the request body for the forward should be sourced from the request body of the initial request, `X-GitHub-Delivery` should be pulled from `X-GitHub-Delivery` in the original request, `X-Hub-Signature` should be pulled from `X-Hub-Signature` in the original request, and so on. It's not hard to do, just annoying.
 
 They also [set the committer email](https://forum.bors.tech/t/customizing-the-name-email-and-avatar-of-the-bots-merge-commits/166) to the same one that the now-unmaintained bundlerbot-homu used. This all allows them to maintain continuity as they evolve the underlying tech behind their GitHub automation, so no matter what third-party app or custom integration they use, it will always be just another iteration of `bundlerbot`.
+
+--------
+
+[Discussion thread on the bors forum](https://forum.bors.tech/t/how-bundler-combines-bors-ng-with-their-own-welcome-bot/226)
