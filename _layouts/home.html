@@ -6,14 +6,16 @@ html{overflow-y:scroll}
 body{margin:0;font-family:sans-serif;line-height: 1.62;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
 .wrapper{max-width:800px;margin:16px auto;padding:0 20px}
 .wrapper--mini{margin:8px auto}
-header,nav{border-bottom:solid 1px #CCC;overflow:hidden}
-nav{background-color:#EEE}
+header,.topnav{border-bottom:solid 1px #CCC;overflow:hidden}
+.topnav{background-color:#EEE}
 h1{font-size:2em}
 .header{border-bottom:solid 1px #CCC;margin:0;margin-bottom:7px;padding-bottom:8px}
 .header--allcaps{text-transform:uppercase}
 #header-user,footer,.blog,.toolbar{display:none}
 #header-logo{vertical-align:middle;display:inline-block;height:50px;line-height:50px}
 :link,:visited{text-decoration:none;color:#3A5883}
+.hero-image img{max-width:100%}
+.hero-image{position:relative}
 @media (max-width: 699px) {
   #header-logo {
     width: auto; height: auto;
@@ -61,26 +63,26 @@ document.addEventListener('DOMContentLoaded', function () {
 }, false);
 </script>
 
-<nav><div class=wrapper>
+<section class=topnav><div class=wrapper>
 
 {% if paginator.page == 1 %}
 
-<h1 class="header header--allcaps">Consistent Automated Testing</h1>
-  
-<p>Automate the consolidation of git branches submitted by developers and test the merge results with your CI system (Travis CI, BuildBot, etc.) before commiting to the production master branch.
+<h1 class="header header--allcaps">Strict Mode for your CI/CD</h1>
 
-<p>Running tests on each developer's branch is not sufficent.
-They may <a href="/essay/2017/02/02/pitch/">conflict in a semantic way</a>
-that causes the master branch to fail when merged.
-Additional work that is built on such a broken master branch is tainted,
-unable to tell which failures are the result of an existing bug or a new one.
+<p>Bors is a GitHub bot that prevents <a href="/essay/2017/02/02/pitch/">merge skew / semantic merge conflicts</a>,
+so when a developer checks out the main branch, they can expect all of the tests to pass out-of-the-box.
 
-<p>Instead, the combined system must be tested, as a whole,
-before the work becomes a part of the master branch which will form the basis of future work.
-Doing so, as work continues unabated, will force a backlog to be enqueued.
+<p class=hero-image><a href="https://github.com/bors-ng/bors-ng/pull/461"><img src="/images/hero-screenshot.png" alt="Here's an example pull request."></a>
 
-<p><a href="http://graydon2.dreamwidth.org/1597.html" title="The not-rocket-science rule of software engineering">This system should be automated</a>.
-The tool that automates this is called bors.
+<ul>
+  <li>You open and review pull requests like normal on GitHub</li>
+  <li>When it's good-enough, instead of merging immediately, you tell bors to do it</li>
+  <li>Bors merges your pull request into a staging area, and runs your automated test suite</li>
+  <li>If staging passes, then it is copied to master</li>
+</ul>
+
+<p>The cool part of separating the merging from the publishing is that <a href="http://graydon2.dreamwidth.org/1597.html" title="The not-rocket-science rule of software engineering">the exact integration of pull requests that end up in master</a> have already been tested before any developers try to work on it or users try to deploy it.
+It means less reverting commits after merging them, less hunting down others' mistakes before being able to do any of your own work, and, because bors does everything in the background, less waiting around for tests to run.
 
 <footer>
   <div class=toolbar>
@@ -99,7 +101,7 @@ The tool that automates this is called bors.
 
 {% endif %}
 
-</div></nav>
+</div></section>
 
   {{ content }}
 
