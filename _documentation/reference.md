@@ -81,13 +81,9 @@ If any member of the project requests changes, their review must be dismissed be
 
 Note that underscores (`_`) and hyphens (`-`) are interchangable in configuration option names. That is, `pr_status` and `pr-status` are the same thing.
 
-The committer options, if provided, should be given as a table.  They can be written as either of the following:
+The committer options, if provided, should be given as a table:
 
 ```toml
-# short form
-committer = { name = "King Ban", email = "ban@example.com" }
-
-# long form
 [committer]
 name = "King Ban"
 email = "ban@example.com"
