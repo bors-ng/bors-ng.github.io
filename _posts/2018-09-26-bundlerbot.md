@@ -21,7 +21,7 @@ This is their self-hosted instance of bors-ng, *also* called `bundlerbot`:
 Making that work required three changes to the usual bors-ng setup.
 
 * The authentication details --- the app ID, private key, and webhook secret --- were kept the same between the GitHub App configuration, the greeter bot, and their self-hosted bors-ng.
-* The command trigger was changed from `bors` to `@bundlerbot`, after one of their maintainers [added an option to change it](https://github.com/bors-ng/bors-ng/pull/461/files).
+* The command trigger was changed from `bors` to `@bundlerbot`, after one of their maintainers [added an option to change it](https://github.com/bors-ng/bors-ng/pull/461/files), so they can run `@bundlerbot r+` to start it.
 * Instead of setting the webhook URL to point at bors-ng directly, they routed their webhooks to a service called [Zapier](https://zapier.com/) and configured it to re-send all of the webhooks twice: once to bundlerbot-bors, and once to their greeter.
 
 <p class="gallery"><img alt="screenshot of Zapier" src="https://forum.bors.tech/uploads/default/optimized/1X/ae49fcea98dba465ef10041c6deab8a47500c369_1_455x500.png"></p>
