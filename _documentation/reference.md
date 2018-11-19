@@ -67,19 +67,25 @@ If any member of the project requests changes, their review must be dismissed be
 
 ## Configuration (bors.toml)
 
-| Name                   | Type       | Description |
-|------------------------|------------|-------------|
-| status                 | \[string\] | List of commit statuses that must pass on the merge commit before it is pushed to master.
-| block_labels           | \[string\] | List of PR labels that may not be attached to a PR when it is r+-ed.
-| pr_status              | \[string\] | List of commit statuses that must pass on the PR commit when it is r+-ed.
-| timeout_sec            | integer    | Number of seconds from when a merge commit is created to when its statuses must pass.
-| required_approvals     | integer    | Number of project members who must approve the PR (using GitHub Reviews) before it is pushed to master.
-| cut_body_after         | string     | A marker in the PR description that indicates boilerplate that does not belong in the commit message.
-| delete_merged_branches | boolean    | If set to true, and if the PR branch is on the same repository that bors-ng itself is on, the branch will be deleted.
-| committer.name         | string     | Set both committer details to have merge commits show up as authored by a specific user. |
-| committer.email        | string     | |
+| Name                   | Type        | Description |
+|------------------------|-------------|-------------|
+| status                 | \[pattern\] | List of commit statuses that must pass on the merge commit before it is pushed to master.
+| block_labels           | \[string\]  | List of PR labels that may not be attached to a PR when it is r+-ed.
+| pr_status              | \[string\]  | List of commit statuses that must pass on the PR commit when it is r+-ed.
+| timeout_sec            | integer     | Number of seconds from when a merge commit is created to when its statuses must pass.
+| required_approvals     | integer     | Number of project members who must approve the PR (using GitHub Reviews) before it is pushed to master.
+| cut_body_after         | string      | A marker in the PR description that indicates boilerplate that does not belong in the commit message.
+| delete_merged_branches | boolean     | If set to true, and if the PR branch is on the same repository that bors-ng itself is on, the branch will be deleted.
+| committer.name         | string      | Set both committer details to have merge commits show up as authored by a specific user. |
+| committer.email        | string      | |
 
 Note that underscores (`_`) and hyphens (`-`) are interchangable in configuration option names. That is, `pr_status` and `pr-status` are the same thing.
+
+Patterns are written using SQL `LIKE` syntax. For example, this `status` directive will match any CI job that starts with `ci/gitlab/`:
+
+```toml
+status = [ 'ci/gitlab/%' ]
+```
 
 The committer options, if provided, should be given as a table:
 
