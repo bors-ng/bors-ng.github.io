@@ -48,7 +48,7 @@ h1{font-size:2em}
 {% include header.html %}
 {% endif %}
 
-<!-- http://dejanstojanovic.net/javascript/2017/may/non-blocking-css-load-on-the-page/ -->
+<!-- https://dejanstojanovic.net/javascript/2017/may/non-blocking-css-load-on-the-page/ -->
 <noscript id=async-stylesheets>
 <link rel="stylesheet" href="{{ "/css/style-6.css" }}" type="text/css">
 </noscript>
@@ -81,7 +81,7 @@ so when a developer checks out the main branch, they can expect all of the tests
   <li>If staging passes, then it is copied to master</li>
 </ul>
 
-<p>The cool part of separating the merging from the publishing is that <a href="http://graydon2.dreamwidth.org/1597.html" title="The not-rocket-science rule of software engineering">the exact integration of pull requests that end up in master</a> have already been tested before any developers try to work on it or users try to deploy it.
+<p>The cool part of separating the merging from the publishing is that <a href="https://graydon2.dreamwidth.org/1597.html" title="The not-rocket-science rule of software engineering">the exact integration of pull requests that end up in master</a> have already been tested before any developers try to work on it or users try to deploy it.
 It means less reverting commits after merging them, less hunting down others' mistakes before being able to do any of your own work, and, because bors does everything in the background, less waiting around for tests to run.
 
 <footer>
