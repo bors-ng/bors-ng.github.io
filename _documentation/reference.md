@@ -17,6 +17,7 @@ description: All of the commands and configuration options supported by bors-ng
 | bors r=[list] | Same as r+, but the "reviewer" in the commit log will be recorded as the user(s) given as the argument.
 | bors r- | Cancel an r+ or r=.
 | bors try | Run the test suite without pushing to master.
+| bors try- | Cancel a try
 | bors delegate+ | Allow the pull request author to r+ their changes.
 | bors delegate=[list] | Allow the listed users to r+ this pull request's changes.
 | bors ping | Check if bors is up. If it is, it will comment with _pong_.
