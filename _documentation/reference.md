@@ -61,10 +61,6 @@ On the other hand, bors will ignore this table if it's given [like this (with th
     | bors delegate+ | Allow the pull request author to r+
     | bors delegate=[list] | Allow the listed users to r+
     | bors ping | Will respond if bors is set up
-    
-### Note on rejected code reviews
-
-If any member of the project requests changes, their review must be dismissed before Bors will merge the branch in to master.
 
 ## Configuration (bors.toml)
 
