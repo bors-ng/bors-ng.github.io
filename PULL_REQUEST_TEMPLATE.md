@@ -33,6 +33,4 @@ And, these should be done last thing:
 
 And publish to third-party syndication services:
 
-- [ElixirStatus](https://elixirstatus.com): copy the summary into their description box, followed by the post's URL; see <http://elixirstatus.com/p/doG2-ninth-monthly-bors-newsletter> for an example of how it should look
-- [dev.to](https://dev.to): @notriddle should approve the draft after the RSS system pulls it in
 - [MailChimp](https://us19.admin.mailchimp.com/lists/): @notriddle should copy and paste the newsletter, then tweak the links
