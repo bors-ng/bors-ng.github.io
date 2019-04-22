@@ -29,7 +29,7 @@ branches:
 ```
 
 Once you have a Continuous Integration service running,
-connect bors-ng to your repo <a href="https://github.com/integration/bors">from within GitHub</a>.
+connect bors-ng to your repo <a href="https://github.com/apps/bors">from within GitHub</a>.
 
 The final step is to create a `bors.toml` file in your repo.
 This will specify what CI systems Bors-NG should use,
