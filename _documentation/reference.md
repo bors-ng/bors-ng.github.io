@@ -94,6 +94,7 @@ email = "ban@example.com"
 
 # Development resources
 
+* <https://bors.tech/rfcs/>: RFCs, which are used to get feedback on new features and such
 * <https://hexdocs.pm/elixir/syntax-reference.html>: Elixir language documentation
 * <https://hexdocs.pm/phoenix/overview.html>: Phoenix web framework documentation
 * <https://developer.github.com/apps/>: GitHub API documentation
