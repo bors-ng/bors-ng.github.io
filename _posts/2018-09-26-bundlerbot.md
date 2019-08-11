@@ -24,7 +24,7 @@ Making that work required three changes to the usual bors-ng setup.
 * The command trigger was changed from `bors` to `@bundlerbot`, after one of their maintainers [added an option to change it](https://github.com/bors-ng/bors-ng/pull/461/files), so they can run `@bundlerbot r+` to start it.
 * Instead of setting the webhook URL to point at bors-ng directly, they routed their webhooks to a service called [Zapier](https://zapier.com/) and configured it to re-send all of the webhooks twice: once to bundlerbot-bors, and once to their greeter.
 
-<p class="gallery"><img alt="screenshot of Zapier" src="https://forum.bors.tech/uploads/default/optimized/1X/ae49fcea98dba465ef10041c6deab8a47500c369_1_455x500.png"></p>
+<p class="gallery"><img alt="screenshot of Zapier" src="https://forum.bors.tech/uploads/default/optimized/1X/ae49fcea98dba465ef10041c6deab8a47500c369_2_910x1000.png"></p>
 
 Unfortunately, even though Zapier is nice and flexible, it required them to set all of the headers that needed to be re-sent one at a time: the request body for the forward should be sourced from the request body of the initial request, `X-GitHub-Delivery` should be pulled from `X-GitHub-Delivery` in the original request, `X-Hub-Signature` should be pulled from `X-Hub-Signature` in the original request, and so on. It's not hard to do, just annoying.
 
