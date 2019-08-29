@@ -46,9 +46,13 @@ And if you want to copy the above table into a markdown comment, make sure that 
     bors r=[list] | Same as r+, but the "reviewer" will come from the argument
     bors r- | Cancel an r+ or r=
     bors try | Run the test suite without pushing
+    bors try- | Cancel a try
     bors delegate+ | Allow the pull request author to r+
     bors delegate=[list] | Allow the listed users to r+
     bors ping | Will respond if bors is set up
+    bors retry | Run the previous command a second time.
+    bors p=[priority] | Set the priority
+    bors r+ p=[priority] | Shorthand for `bors p=[priority]` followed by `bors r+`
 
 On the other hand, bors will ignore this table if it's given [like this (with the optional pipes at the beginning of every line)](https://github.com/notriddle/test_repo/pull/118#issuecomment-334333878):
 
@@ -58,9 +62,13 @@ On the other hand, bors will ignore this table if it's given [like this (with th
     | bors r=[list] | Same as r+, but the "reviewer" will come from the argument
     | bors r- | Cancel an r+ or r=
     | bors try | Run the test suite without pushing
+    | bors try- | Cancel a try
     | bors delegate+ | Allow the pull request author to r+
     | bors delegate=[list] | Allow the listed users to r+
     | bors ping | Will respond if bors is set up
+    | bors retry | Run the previous command a second time.
+    | bors p=[priority] | Set the priority
+    | bors r+ p=[priority] | Shorthand for `bors p=[priority]` followed by `bors r+`
 
 ## Configuration (bors.toml)
 
