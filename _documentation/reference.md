@@ -83,7 +83,7 @@ On the other hand, bors will ignore this table if it's given [like this (with th
 | delete_merged_branches | boolean     | If set to true, and if the PR branch is on the same repository that bors-ng itself is on, the branch will be deleted.
 | committer.name         | string      | Set both committer details to have merge commits show up as authored by a specific user. |
 | committer.email        | string      | |
-| use_codeowners      | boolean     | If turned on, `CODEOWNERS` file will be parsed. [See GitHub's docs](https://help.github.com/en/articles/about-code-owners) for more info. |
+| use_codeowners         | boolean     | If turned on, `CODEOWNERS` file will be parsed. [See GitHub's docs](https://help.github.com/en/articles/about-code-owners) for more info. |
 
 Note that underscores (`_`) and hyphens (`-`) are interchangable in configuration option names. That is, `pr_status` and `pr-status` are the same thing.
 
