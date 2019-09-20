@@ -18,8 +18,8 @@ description: All of the commands and configuration options supported by bors-ng
 | bors r- | Cancel an r+ or r=.
 | bors try | Run the test suite without pushing to master.
 | bors try- | Cancel a try
-| bors delegate+ | Allow the pull request author to r+ their changes.
-| bors delegate=[list] | Allow the listed users to r+ this pull request's changes.
+| bors delegate+ <br> bors d+ | Allow the pull request author to r+ their changes.
+| bors delegate=[list] <br> bors d=[list] | Allow the listed users to r+ this pull request's changes.
 | bors ping | Check if bors is up. If it is, it will comment with _pong_.
 | bors retry | Run the previous command a second time.
 | bors p=[priority] | Set the priority of the current pull request. Pull requests with different priority are never batched together. The pull request with the bigger priority number goes first.
