@@ -59,6 +59,10 @@ leave a comment like this on the pull request:
 
 > bors r+
 
+Equivalently, you can comment the following:
+
+> bors merge
+
 The pull request,
 as well as any other pull requests that are reviewed around the same time,
 will be merged into a branch called "staging".
