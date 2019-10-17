@@ -159,4 +159,8 @@ It might be one of these common problems:
   * The bors integration needs to be enabled on your GitHub repo.
     If this is the problem, bors will not respond to commands.
 
+  * When using protected branches, make sure `bors` is included in the list allowed to push to them.
+
+  * When using protected branches, leave the `Require pull request reviews before merging` option unmarked, otherwise you'll start to get a lot of `422` errors. If you want to enforce reviews on your Pull Requests and/or you're using `CODEOWNERS`, require these options solely on bors with the respective options: `required_approvals` and `use_codeowners`. Also, make sure `bors` is included in the list allowed to push to the protected branch.
+
 You can also get help on [our forum](https://forum.bors.tech). We won't chew you out if it turns out to be one of those problems after all.
