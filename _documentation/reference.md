@@ -98,6 +98,7 @@ On the other hand, bors will ignore this table if it's given [like this (with th
 | committer.name         | string      | Set both committer details to have merge commits show up as authored by a specific user. |
 | committer.email        | string      | |
 | use_codeowners         | boolean     | If turned on, `CODEOWNERS` file will be parsed. [See GitHub's docs](https://help.github.com/en/articles/about-code-owners) for more info. |
+| use_squash_merge       | boolean     | If turned on, the Pull Request will be Squashed before merging. [See Github's docs](https://help.github.com/en/articles/about-pull-request-merges#squash-and-merge-your-pull-request-commits) for more info. |
 
 Note that underscores (`_`) and hyphens (`-`) are interchangable in configuration option names. That is, `pr_status` and `pr-status` are the same thing.
 
