@@ -28,7 +28,7 @@ branches:
     #- master
 ```
 
-Or, if using CircleCI filter the :
+Or, if using CircleCI filter the various jobs.
 ```yaml
 workflows:
   build-deploy:
