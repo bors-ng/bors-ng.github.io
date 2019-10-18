@@ -61,9 +61,7 @@ For example, this will work for a repo with Travis CI and AppVeyor:
 ```toml
 status = [
   "continuous-integration/travis-ci/push",
-  "continuous-integration/appveyor/branch",
-  "ci/circleci: some-job", #CircleCI using GitHub Status
-  "workflow-name" #CircleCI using new GitHub Checks
+  "continuous-integration/appveyor/branch"
 ]
 # Uncomment this to use a two hour timeout.
 # The default is one hour.
