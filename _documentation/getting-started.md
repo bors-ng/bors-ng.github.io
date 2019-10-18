@@ -12,7 +12,7 @@ it's just a frontend that implements a particular workflow on top of it.
 So the first step of setting up bors is setting something up to automatically run your tests.
 It should be able to run the contents of a particular branch
 and report its results using a GitHub Status notification
-(the little <abbr style="color:orange" title="The build is in progress">&bull;</abbr>, <abbr style="color:green" title="Build succeeded">&#10003;</abbr>, or <abbr style="color:red" title="Build failed">&times;</abbr> next to a commit in the commits list). Newer CI systems, like Travis and AppVeyor, will do this by default. Jenkins and BuildBot have plugins for it.
+(the little <abbr style="color:orange" title="The build is in progress">&bull;</abbr>, <abbr style="color:green" title="Build succeeded">&#10003;</abbr>, or <abbr style="color:red" title="Build failed">&times;</abbr> next to a commit in the commits list). Newer CI systems, like Travis, AppVeyor, and CircleCI will do this by default. Jenkins and BuildBot have plugins for it.
 
 Your CI system should build the "staging" and "trying" branches, but should not build the "staging.tmp" and "trying.tmp" branches.
 If your CI system is misconfigured to do this, bors should notify you. For example, add this to your .travis.yml or appveyor.yml file:
@@ -28,6 +28,27 @@ branches:
     #- master
 ```
 
+Or, if using CircleCI filter the :
+```yaml
+workflows:
+  build-deploy:
+    jobs:
+      - test:
+          # run full test cycle for 'merge' or 'try'
+          filters:
+            branches:
+              only: 
+                - staging
+                - trying
+      - publish:
+          requires:
+            - test
+          # only publish site changes on 'merge'
+          filters:
+            branches:
+              only: staging
+```
+
 Once you have a Continuous Integration service running,
 connect bors-ng to your repo <a href="https://github.com/apps/bors">from within GitHub</a>.
 
@@ -40,15 +61,32 @@ For example, this will work for a repo with Travis CI and AppVeyor:
 ```toml
 status = [
   "continuous-integration/travis-ci/push",
-  "continuous-integration/appveyor/branch"
+  "continuous-integration/appveyor/branch",
+  "ci/circleci: some-job", #CircleCI using GitHub Status
+  "workflow-name" #CircleCI using new GitHub Checks
 ]
 # Uncomment this to use a two hour timeout.
 # The default is one hour.
 #timeout_sec = 7200
 ```
 
+Or if using CircleCI, specify the job names or workflow name to require.
+```toml
+#CircleCI using GitHub Status
+status = [
+  "ci/circleci: jobname"
+  
+]
+
+#CircleCI using GitHub Checks
+status = [
+  "workflow-name" 
+]
+```
+
+
 Once that's there, `bors r+` will work.
-Note that bors reads bors.toml from the pull requests it's merging,
+**Note:** that bors reads bors.toml from the pull requests it's merging,
 not the one in master,
 so changes to the file get checked before they land.
 
