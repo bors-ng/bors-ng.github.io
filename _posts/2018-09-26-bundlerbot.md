@@ -12,11 +12,11 @@ If you want all that stuff, you can add more apps to do it. And if really want t
 
 This is their [greeter script](https://github.com/bundler/bundlerbot), called `bundlerbot`:
 
-<p class="gallery"><img alt="screenshot of github" src="https://screenshotscdn.firefoxusercontent.com/images/8eeda687-77fb-449c-82bb-b6e95b20c1ca.png"></p>
+<p class="gallery"><img alt="screenshot of github" src="https://forum.bors.tech/uploads/default/optimized/1X/fa54dfbbc3733a7f88e17e656ecdf9169ed695a1_2_690x308.png"></p>
 
 This is their self-hosted instance of bors-ng, *also* called `bundlerbot`:
 
-<p class="gallery"><img alt="screenshot of github" src="https://screenshotscdn.firefoxusercontent.com/images/f2c9b8c3-9e0a-419a-9079-c1cb1251481a.png"></p>
+<p class="gallery"><img alt="screenshot of github" src="https://forum.bors.tech/uploads/default/optimized/1X/4aae3417d78d4d3df4ed86cc04d1e96e57e5aa4b_2_690x162.png"></p>
 
 Making that work required three changes to the usual bors-ng setup.
 
