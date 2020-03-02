@@ -28,6 +28,8 @@ description: All of the commands and configuration options supported by bors-ng
 | bors p=[priority] | Set the priority of the current pull request. Pull requests with different priority are never batched together. The pull request with the bigger priority number goes first.
 | bors r+ p=[priority] | Set the priority, run the test suite, and push to master (shorthand for doing p= and r+ one after the other).
 | bors merge p=[priority] | Equivalent to `bors r+ p=[priority]`
+| bors single on | Disable batching on this pull request
+| bors single off | Enable batching
 
 The keyword (`bors`) may be separated with a space or a colon. That is, `bors try` and `bors: try` are the same thing.
 Also, the command will be recognized if, and only if, the word "bors" is at the beginning of a line.
