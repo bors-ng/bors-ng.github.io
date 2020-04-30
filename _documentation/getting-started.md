@@ -14,8 +14,7 @@ It should be able to run the contents of a particular branch
 and report its results using a GitHub Status notification
 (the little <abbr style="color:orange" title="The build is in progress">&bull;</abbr>, <abbr style="color:green" title="Build succeeded">&#10003;</abbr>, or <abbr style="color:red" title="Build failed">&times;</abbr> next to a commit in the commits list). Newer CI systems, like Travis, AppVeyor, and CircleCI will do this by default. Jenkins and BuildBot have plugins for it.
 
-Your CI system should build the "staging" and "trying" branches, but should not build the "staging.tmp" and "trying.tmp" branches.
-If your CI system is misconfigured to do this, bors should notify you. For example, add this to your .travis.yml or appveyor.yml file:
+Your CI system should build the "staging" and "trying" branches, but should not build the "staging.tmp" and "trying.tmp" branches. As of recently, it should also not build the "staging-squash-merge.tmp" branch. A recommendation is to configure your CI system to not build on branches that match a pattern such as `*.tmp`. If your CI system is misconfigured to do this, bors should notify you. For example, add this to your .travis.yml or appveyor.yml file:
 
 ```yaml
 branches:
