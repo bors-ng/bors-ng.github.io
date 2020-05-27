@@ -13,7 +13,7 @@ description: All of the commands and configuration options supported by bors-ng
 
 | Syntax | Description |
 |--------|-------------|
-| bors r+ | Run the test suite and push to master if it passes. Short for "reviewed: looks good."
+| bors r+ | Run the test suite and push to the base branch if it passes. Short for "reviewed: looks good."
 | bors merge | Equivalent to `bors r+`.
 | bors r=[list] | Same as r+, but the "reviewer" in the commit log will be recorded as the user(s) given as the argument.
 | bors merge=[list] | Equivalent to `bors r=[list]`
