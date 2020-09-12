@@ -14,6 +14,10 @@ h1{font-size:2em}
 #header-user,footer,.blog,.toolbar{display:none}
 #header-logo{vertical-align:middle;display:inline-block;height:50px;line-height:50px}
 :link,:visited{text-decoration:none;color:#3A5883}
+a.txt{
+  text-decoration:underline;
+  text-decoration-color:#000;
+}
 @media (max-width: 699px) {
   .hero-image img{width:319px;height:247px}
   #header-logo {
@@ -68,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <h1 class="header header--allcaps">Strict Mode for your CI/CD</h1>
 
-<p>Bors is a GitHub bot that prevents <a href="/essay/2017/02/02/pitch/">merge skew / semantic merge conflicts</a>,
+<p>Bors is a GitHub bot that prevents <a class=txt href="/essay/2017/02/02/pitch/">merge skew / semantic merge conflicts</a>,
 so when a developer checks out the main branch, they can expect all of the tests to pass out-of-the-box.
 
 <p class=hero-image><a href="https://github.com/bors-ng/bors-ng/pull/944"><img width=638 height=494 src="/images/hero-screenshot-b-1x.png" srcset="/images/hero-screenshot-b-1x.png 1x, /images/hero-screenshot-b-2x.png 2x" alt="Here's an example pull request."></a>
@@ -80,7 +84,7 @@ so when a developer checks out the main branch, they can expect all of the tests
   <li>If staging passes, then it is copied to master</li>
 </ul>
 
-<p>The cool part of separating the merging from the publishing is that <a href="https://graydon2.dreamwidth.org/1597.html" title="The not-rocket-science rule of software engineering">the exact integration of pull requests that end up in master</a> have already been tested before any developers try to work on it or users try to deploy it.
+<p>The cool part of separating the merging from the publishing is that <a class=txt href="https://graydon2.dreamwidth.org/1597.html" title="The not-rocket-science rule of software engineering">the exact integration of pull requests that end up in master</a> have already been tested before any developers try to work on it or users try to deploy it.
 It means less reverting commits after merging them, less hunting down others' mistakes before being able to do any of your own work, and, because bors does everything in the background, less waiting around for tests to run.
 
 <footer>
