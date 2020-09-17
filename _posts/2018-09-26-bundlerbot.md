@@ -6,6 +6,8 @@ summary:    Running more than one GitHub app with the same name
 categories: writeup
 ---
 
+**Edit 15-03-2020**: Bundler and Gems are no longer using bors, as describe [here](https://github.com/rubygems/rubygems/pull/3389).
+
 The central principle of bors-ng is to be an easy-to-set-up implementation of an uncomplicated continuous testing regime, and to do that one thing well. It doesn't take care of deployment, it doesn't sort your issues, it doesn't update your dependencies, and it doesn't post a comment on all first-time contributors' pull requests.
 
 If you want all that stuff, you can add more apps to do it. And if really want to make it look pro, you can do what [bundler](https://github.com/bundler/bundler) did.
