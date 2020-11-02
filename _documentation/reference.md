@@ -101,6 +101,7 @@ On the other hand, bors will ignore this table if it's given [like this (with th
 | committer.email        | string      | |
 | use_codeowners         | boolean     | If turned on, `CODEOWNERS` file will be parsed. [See GitHub's docs](https://help.github.com/en/articles/about-code-owners) for more info. |
 | use_squash_merge       | boolean     | If turned on, commits will be Squashed before merging and the Pull Request will be Closed with `[Merged by Bors] - ` addition to the tile. [See Github's docs](https://help.github.com/en/articles/about-pull-request-merges#squash-and-merge-your-pull-request-commits) for more info. |
+| update_base_for_deletes | boolean    | If turned on, and if `delete_merged_branches` is also turned on, then when a pull request is merged and its base branch is about to be deleted, any other pull requests made against the base branch will be fixed up. |
 
 Note that underscores (`_`) and hyphens (`-`) are interchangable in configuration option names. That is, `pr_status` and `pr-status` are the same thing.
 
