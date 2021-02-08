@@ -1,0 +1,33 @@
+---
+layout: page
+title: "Page list"
+---
+
+<main>
+<div class=wrapper>
+
+<table>
+{% for post in site.pages %}
+  <tr>
+    <td>
+      <a href="{{ post.url }}">{{ post.url }}</a>
+    </td>
+    <td>
+      {{ post.title }}
+    </td>
+  </tr>
+{% endfor %}
+{% for post in site.posts %}
+  <tr>
+    <td>
+      <a href="{{ post.url }}">{{ post.url }}</a>
+    </td>
+    <td>
+      {{ post.title }}
+    </td>
+  </tr>
+{% endfor %}
+</table>
+
+</div>
+</main>
