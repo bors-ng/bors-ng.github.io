@@ -19,6 +19,7 @@ description: All of the commands and configuration options supported by bors-ng
 | bors merge=[list] | Equivalent to `bors r=[list]`
 | bors r- | Cancel an r+, r=, merge, or merge=
 | bors merge- | Equivalent to `bors r-`
+| bors cancel | Equivalent to `bors r-`
 | bors try | Run the test suite without pushing to master.
 | bors try- | Cancel a try
 | bors delegate+ <br> bors d+ | Allow the pull request author to r+ their changes.
