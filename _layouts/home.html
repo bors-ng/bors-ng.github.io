@@ -81,10 +81,10 @@ so when a developer checks out the main branch, they can expect all of the tests
   <li>You open and review pull requests like normal on GitHub</li>
   <li>When it's good-enough, instead of merging immediately, you comment <code>bors r+</code>, adding it to the merge queue</li>
   <li>Bors merges your pull request into a staging area, and runs your automated test suite</li>
-  <li>If staging passes, then it is copied to master</li>
+  <li>If the staging branch passes, then it is copied to the main branch</li>
 </ul>
 
-<p>The cool part of separating the merging from the publishing is that <a class=txt href="https://graydon2.dreamwidth.org/1597.html" title="The not-rocket-science rule of software engineering">the exact integration of pull requests that end up in master</a> have already been tested before any developers try to work on it or users try to deploy it.
+<p>The cool part of separating the merging from the publishing is that <a class=txt href="https://graydon2.dreamwidth.org/1597.html" title="The not-rocket-science rule of software engineering">the exact integration of pull requests that end up in the main branch</a> have already been tested before any developers try to work on it or users try to deploy it.
 It means less reverting commits after merging them, less hunting down others' mistakes before being able to do any of your own work, and, because bors does everything in the background, less waiting around for tests to run.
 
 <footer>
