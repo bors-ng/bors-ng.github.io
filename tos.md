@@ -16,7 +16,7 @@ By the way, the people operating The Service ("We"/"Us") can't absolve
 the person who interacts with The Service ("You") of [GitHub's terms of service].
 The Service is not run by GitHub.
 Since there's no way to use The Service without also using the public GitHub service,
-you will need to comply with both contacts.
+you will need to comply with both contracts.
 
 [GitHub's terms of service]: https://help.github.com/articles/github-terms-of-service/
 
