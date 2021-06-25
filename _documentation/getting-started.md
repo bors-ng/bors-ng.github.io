@@ -7,14 +7,27 @@ redirect_from: /getting-started/
 
 # Setting up bors
 
-Bors-NG does not replace CI tools like Travis CI;
+Bors-NG does not replace CI tools like Travis CI or Github Actions;
 it's just a frontend that implements a particular workflow on top of it.
 So the first step of setting up bors is setting something up to automatically run your tests.
-It should be able to run the contents of a particular branch
-and report its results using a GitHub Status notification
-(the little <abbr style="color:orange" title="The build is in progress">&bull;</abbr>, <abbr style="color:green" title="Build succeeded">&#10003;</abbr>, or <abbr style="color:red" title="Build failed">&times;</abbr> next to a commit in the commits list). Newer CI systems, like Travis, AppVeyor, and CircleCI will do this by default. Jenkins and BuildBot have plugins for it.
 
-Your CI system should build the "staging" and "trying" branches, but should not build the "staging.tmp", "trying.tmp", or "staging-squash-merge.tmp" branches. The "staging.tmp" branch is used for bors r+ builds, the "trying.tmp" branch is used for bors try builds, and the "staging-squash-merge.tmp" branch is used only when the `use_squash_merge` feature is enabled.
+The general steps to setup bors-ng are:
+
+* Enable some form of CI system
+    * Your CI system should build the "staging" and "trying" branches, but should not build the "staging.tmp", "trying.tmp", or "staging-squash-merge.tmp" branches. The "staging.tmp" branch is used for bors r+ builds, the "trying.tmp" branch is used for bors try builds, and the "staging-squash-merge.tmp" branch is used only when the `use_squash_merge` feature is enabled.
+    * Your CI system should be able to run the contents of a particular branch and report its results using a GitHub Status notification (the little <abbr style="color:orange" title="The build is in progress">&bull;</abbr>, <abbr style="color:green" title="Build succeeded">&#10003;</abbr>, or <abbr style="color:red" title="Build failed">&times;</abbr> next to a commit in the commits list). Newer CI systems, like Travis, AppVeyor, and CircleCI will do this by default. Jenkins and BuildBot have plugins for it.
+* Connect bors-ng to your repo <a href="https://github.com/apps/bors">from within GitHub</a>.
+* Create a `bors.toml` in your repo with appropriate configuration.
+    * This will specify what CI systems Bors-NG should use, along with other metadata like timeouts.
+    * The most important value is `status`, which specifies which GitHub Statuses it uses to determine a successful or failed build. Its value depends on the CI system you are using.
+    * **Note:** that bors reads bors.toml from the pull requests it's merging, not the one in master, so changes to the file get checked before they land. You can therefore verify whether bors is working by using `bors r+` to try and land the PR that enables it!
+* Once this is done, you should be able to use bors to merge, as discussed in the section below!
+
+## Detailed instructions for various CI systems
+
+### Setting up Travis
+
+For travis, the configuration to limit to particular branches should look something like this:
 
 ```yaml
 branches:
@@ -27,7 +40,27 @@ branches:
     #- master
 ```
 
-Or, if using CircleCI filter the various jobs.
+Once you have travis running, connect bors-ng to your repo <a href="https://github.com/apps/bors">from within GitHub</a>.
+
+Next, create a `bors.toml`. It should look something like this:
+
+```toml
+status = [
+  "continuous-integration/travis-ci/push",
+  "continuous-integration/appveyor/branch"
+]
+# Uncomment this to use a two hour timeout.
+# The default is one hour.
+#timeout_sec = 7200
+```
+
+
+Once that's there, `bors r+` will work.
+
+### Configuring CircleCI
+
+CircleCI configuration should look something like this:
+
 ```yaml
 workflows:
   build-deploy:
@@ -48,26 +81,10 @@ workflows:
               only: staging
 ```
 
-Once you have a Continuous Integration service running,
-connect bors-ng to your repo <a href="https://github.com/apps/bors">from within GitHub</a>.
+Next, install the bors application as described above.
 
-The final step is to create a `bors.toml` file in your repo.
-This will specify what CI systems Bors-NG should use,
-along with other metadata like timeouts.
-The `status` key specifies which GitHub Statuses it uses to determine a successful or failed build.
-For example, this will work for a repo with Travis CI and AppVeyor:
+Next, create a `bors.toml` file which specifies the job names or workflow name to require:
 
-```toml
-status = [
-  "continuous-integration/travis-ci/push",
-  "continuous-integration/appveyor/branch"
-]
-# Uncomment this to use a two hour timeout.
-# The default is one hour.
-#timeout_sec = 7200
-```
-
-Or if using CircleCI, specify the job names or workflow name to require.
 ```toml
 #CircleCI using GitHub Status
 status = [
@@ -81,11 +98,37 @@ status = [
 ]
 ```
 
+### Configuring Github Actions
 
-Once that's there, `bors r+` will work.
-**Note:** that bors reads bors.toml from the pull requests it's merging,
-not the one in master,
-so changes to the file get checked before they land.
+First, configure a workflow that builds Rust that is configured to run on pushs to the `main`, `staging`, and `trying` branches. As an example, for a Rust project, you might hvae a `.github/workflows/rust.yml` file like this:
+
+```yaml
+name: Rust
+
+on:
+  push:
+    branches: [main, staging, trying]
+  pull_request:
+    branches: [main]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: cargo build --verbose
+      - name: Run tests
+        run: cargo test --verbose
+```
+
+Next, install the bors application as described above.
+
+Next, create a `bors.toml` file which specifies the status names. To figure out what name to use, use the name of the *job* (`Build`, in our example above). You can find that by looking at the "status" marks on your PR. It should say something like `Rust / Build (...)`, in which case you want the `Build` (the `Rust` part comes from the name of the workflow, and that is not what you want).
 
 # Reviewing pull requests
 
