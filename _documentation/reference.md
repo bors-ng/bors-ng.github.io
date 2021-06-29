@@ -91,7 +91,7 @@ On the other hand, bors will ignore this table if it's given [like this (with th
 
 | Name                   | Type        | Description |
 |------------------------|-------------|-------------|
-| status                 | \[pattern\] | List of commit statuses that must pass on the merge commit before it is pushed to master.
+| status                 | \[pattern\] | List of commit statuses that must pass on the merge commit before it is pushed to master. If using Github Actions this would reference to the job name.
 | block_labels           | \[string\]  | List of PR labels that may not be attached to a PR when it is r+-ed.
 | pr_status              | \[string\]  | List of commit statuses that must pass on the PR commit when it is r+-ed.
 | timeout_sec            | integer     | Number of seconds from when a merge commit is created to when its statuses must pass.
