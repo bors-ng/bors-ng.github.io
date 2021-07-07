@@ -51,21 +51,6 @@ a.txt{
 {% include header.html %}
 {% endif %}
 
-<!-- https://dejanstojanovic.net/javascript/2017/may/non-blocking-css-load-on-the-page/ -->
-<noscript id=async-stylesheets>
-<link rel="stylesheet" href="{{ "/css/style-7.css" }}" type="text/css">
-</noscript>
-<script>
-document.addEventListener('DOMContentLoaded', function () {  
-    var noscriptContainer = document.getElementById("async-stylesheets");
-    if (noscriptContainer != null) {  
-        var container = document.createElement("div");  
-        container.innerHTML = noscriptContainer.textContent;  
-        document.body.appendChild(container);  
-    }  
-}, false);
-</script>
-
 <section class=topnav><div class=wrapper>
 
 {% if paginator.page == 1 %}
@@ -103,6 +88,10 @@ It means less reverting commits after merging them, less hunting down others' mi
 <h1>Page {{ paginator.page }}/{{ paginator.total_pages }}</h1>
 
 {% endif %}
+
+<!-- https://www.chromestatus.com/feature/5696805480169472 -->
+<link rel="stylesheet" href="{{ "/css/style-7.css" }}" type="text/css">
+<script> </script>
 
 </div></section>
 
