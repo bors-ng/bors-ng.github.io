@@ -2,4 +2,4 @@
 bundle install
 gem install html-proofer
 bundle exec jekyll build
-htmlproofer ./_site/ --disable-external --checks-to-ignore LinkCheck
+htmlproofer ./_site/ --disable-external --checks-to-ignore ScriptCheck
