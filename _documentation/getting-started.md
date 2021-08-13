@@ -100,7 +100,7 @@ status = [
 
 ### Configuring Github Actions
 
-First, configure a workflow that builds Rust that is configured to run on pushs to the `main`, `staging`, and `trying` branches. As an example, for a Rust project, you might hvae a `.github/workflows/rust.yml` file like this:
+First, configure a workflow that builds Rust that is configured to run on pushs to the `main`, `staging`, and `trying` branches. As an example, for a Rust project, you might have a `.github/workflows/rust.yml` file like this:
 
 ```yaml
 name: Rust
