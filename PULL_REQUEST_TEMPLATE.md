@@ -31,6 +31,8 @@ And, these should be done last thing:
 
 - [ ] Write a few useful tidbits in the summary: part
 
+- [ ] Run a new docker release (git pull; docker build -t borsng/bors-ng; docker push borsng/bors-ng)
+
 And publish to third-party syndication services:
 
 - [MailChimp](https://us19.admin.mailchimp.com/lists/): @notriddle should copy and paste the newsletter, then tweak the links
