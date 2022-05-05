@@ -71,6 +71,21 @@ Save it in the `SECRET_KEY_BASE` Config Var.
 
 This is just a button you click. It will log everyone out of the bors-ng dashboard.
 
+# Forcing a redeploy
+
+To make sure it's running the latest version, here's the commands I ran:
+
+    # This gives me direct access to heroku's git repo
+    heroku git:clone --app bors-2sgeew5xkczjb1nqkkx6
+    cd bors-2sgeew5xkczjb1nqkkx6/
+    # This allows me to pull the current version
+    git remote add origin https://github.com/bors-ng/bors-ng
+    git fetch origin
+    # This makes it the current deployed version
+    git reset --hard origin/master
+    # And finally, deploy it
+    git push -f
+
 # Deleting all the old credentials
 
 It will take a minute or two for the new config vars to kick in. You can tell when by logging into the bors-ng dashboard in
