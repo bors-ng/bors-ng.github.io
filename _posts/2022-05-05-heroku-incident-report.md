@@ -52,7 +52,7 @@ The webhook secret is the last permanently-stored GitHub credential we'll need t
 generate it ourselves, so if you have access to a UNIX-like command line and openssl, you'll generate it like
 this from the command line:
 
-    dd if=/dev/urandom of=/dev/stdout bs=256 count=1 | base64 -w1024
+    dd if=/dev/urandom of=/dev/stdout bs=64 count=1 | base64 -w1024
 
 Save the webhook secret as the `GITHUB_WEBHOOK_SECRET` Config Var.
 
