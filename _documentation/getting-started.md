@@ -240,26 +240,29 @@ It might be one of these common problems:
   * When using protected branches, leave the `Require pull request reviews before merging` option unmarked, otherwise you'll start to get a lot of `422` errors. If you want to enforce reviews on your Pull Requests and/or you're using `CODEOWNERS`, require these options solely on bors with the respective options: `required_approvals` and `use_codeowners`. Also, make sure `bors` is included in the list allowed to push to the protected branch.
 
   * When using matrix or generated job names, the configuration might be hard to nail down and bors times out due to missing checks. In sitations like these, it might make sense to have a 'dummy' CI job that depends on all the jobs you want bors to check. An example could look like this:
-  ```yaml
-  # We need some "accummulation" job here because bors fails (timeouts) to
-  # listen on matrix builds.
-  # Hence, we have some kind of dummy here that bors can listen on
-  ci-success:
-    name: CI
-    if: ${{ success() }}
-    needs:
-      - doc
-      - test
-    runs-on: ubuntu-latest
-    steps:
-      - name: CI succeeded
-        run: exit 0
-  ```
-  And in your bors.toml, you then just depend on that "CI" status and bors should be able to find it:
-  ```toml
-  status = [
-    "CI"
-  ]
-  ```
+
+    ```yaml
+    # We need some "accummulation" job here because bors fails (timeouts) to
+    # listen on matrix builds.
+    # Hence, we have some kind of dummy here that bors can listen on
+    ci-success:
+      name: CI
+      if: ${{ success() }}
+      needs:
+        - doc
+        - test
+      runs-on: ubuntu-latest
+      steps:
+        - name: CI succeeded
+          run: exit 0
+    ```
+
+    And in your bors.toml, you then just depend on that "CI" status and bors should be able to find it:
+
+    ```toml
+    status = [
+      "CI"
+    ]
+    ```
 
 You can also get help on [our forum](https://forum.bors.tech). We won't chew you out if it turns out to be one of those problems after all.
