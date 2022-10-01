@@ -31,7 +31,7 @@ And, these should be done last thing:
 
 - [ ] Write a few useful tidbits in the summary: part
 
-- [ ] Run a new docker release (git pull; docker build -t borsng/bors-ng; docker push borsng/bors-ng)
+- [ ] Run a new docker release (git pull; docker build -t borsng/bors-ng .; docker push borsng/bors-ng)
 
 And publish to third-party syndication services:
 
