@@ -105,6 +105,7 @@ On the other hand, bors will ignore this table if it's given [like this (with th
 | update_base_for_deletes | boolean    | If turned on, and if `delete_merged_branches` is also turned on, then when a pull request is merged and its base branch is about to be deleted, any other pull requests made against the base branch will be fixed up. |
 | commit_title           | string      | The title of the merge commit message. Can be templated with `${PR_REFS}` to refer to the merged PR(s). Default is: `Merge ${PR_REFS}`
 | up_to_date_approvals   | boolean     | If turned on, and if `required_approvals` is also turned on, then only approvals up to date with the latest PR commit will count towards the number of required approvals. |
+| max_batch_size         | integer     | If set, then batches will never have more than `max_batch_size` pull requests in them. |
 
 Note that underscores (`_`) and hyphens (`-`) are interchangable in configuration option names. That is, `pr_status` and `pr-status` are the same thing.
 
