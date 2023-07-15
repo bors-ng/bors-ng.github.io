@@ -3,7 +3,7 @@ title: Terms of Service
 layout: page
 ---
 
-__Effective date: July 2017__.
+__Effective date: July 2023__.
 
 # First, getting some things out of the way about this and other services
 
@@ -11,6 +11,10 @@ These are the terms of service for the public instance of bors-ng,
 operating with the [bors](https://github.com/apps/bors) app account on GitHub and <https://app.bors.tech/>.
 In classic contract convention, it'll be referred to as "The Service".  Any usage or participation of The Service
 will constitute acceptance of this agreement.
+
+The Service will go away by 2024. If You want to continue using it, either
+follow the instructions to self-host it at [getting started](/getting-started/),
+or switch to GitHub's native Merge Queue.
 
 By the way, the people operating The Service ("We"/"Us") can't absolve
 the person who interacts with The Service ("You") of [GitHub's terms of service].

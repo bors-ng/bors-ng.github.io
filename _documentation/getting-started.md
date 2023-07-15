@@ -47,9 +47,9 @@ The *webhook secret* should be a randomly generated string. The `mix phx.gen.sec
 
 #####  Permission summary
 
-<details><summary>Screenshot</summary>
+<details><summary>Click here to view a screenshot</summary>
 
-![/permissions-screenshot.png]
+<img style="max-width:100%" src="/permissions-screenshot.png">
 
 </details>
 
@@ -142,11 +142,7 @@ You'll need to edit the configuration with a few bors-specific variables.
 
 The config file in the repository is already set up to pull the needed information from the environment, so you can configure bors by setting the right env variables and deploy the app from this repository into Heroku:
 
-You can do using Heroku's one-button-deploy system:
-
-[![Deploy on Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-Or you can do it manually:
+Run these commands to deploy on Heroku:
 
 **Note**: The `GITHUB_INTEGRATION_ID` is now called the App ID on GitHub.
 
@@ -259,8 +255,6 @@ branches:
     # Uncomment this to enable building pull requests.
     #- master
 ```
-
-Once you have travis running, connect bors-ng to your repo <a href="https://github.com/apps/bors">from within GitHub</a>.
 
 Next, create a `bors.toml`. It should look something like this:
 
@@ -461,6 +455,8 @@ It might be one of these common problems:
 
   * When using matrix or generated job names, the configuration might be hard to nail down and bors times out due to missing checks. In sitations like these, it might make sense to have a 'dummy' CI job that depends on all the jobs you want bors to check. An example could look like this:
 
+{% raw  %}
+
     ```yaml
     # We need some "accummulation" job here because bors fails (timeouts) to
     # listen on matrix builds.
@@ -476,6 +472,8 @@ It might be one of these common problems:
         - name: CI succeeded
           run: exit 0
     ```
+
+{% endraw %}
 
     And in your bors.toml, you then just depend on that "CI" status and bors should be able to find it:
 

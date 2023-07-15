@@ -36,7 +36,13 @@ a.txt{
 }
 </style>
 <body>
-{% if paginator.page == 1 %}
+
+  <section class=topnav><div class=wrapper>
+    <p>Heads up! Bors-NG's public instance is being phased out in favor of <a href="https://github.blog/2023-07-12-github-merge-queue-is-generally-available/">GitHub Merge Queues</a>.</p>
+    <p>Read the updated <a href="/documentation/getting-started/">Getting Started Guide</a> to self-host your own instance of Bors-NG, or visit GitHub's docs for information on merge queues.</p>
+  </div></section>
+
+  {% if paginator.page == 1 %}
   <header role="banner" class=header-home>
     <div class="wrapper">
       <div id=header-logo>
@@ -75,11 +81,6 @@ It means less reverting commits after merging them, less hunting down others' mi
 <footer>
   <div class=toolbar>
     <a class="toolbar-item toolbar-item--add" href="/documentation/getting-started/">Set up your repository</a>
-    <span class=subscribe-options>
-      <a href="#mailing-list"><img alt="Mailing list" src="/images/email.svg" width=30 height=30></a>
-      <a href="/feed.xml"><img alt="RSS" src="/images/rss.svg" width=25 height=25></a>
-      <a href="//github.com/bors-ng"><img title="Fork me on GitHub!" alt="GitHub" src="/images/github.svg" width=25 height=25></a>
-    </span>
   </div>
 </footer>
 
@@ -90,7 +91,7 @@ It means less reverting commits after merging them, less hunting down others' mi
 {% endif %}
 
 <!-- https://www.chromestatus.com/feature/5696805480169472 -->
-<link rel="stylesheet" href="{{ "/css/style-7.css" }}" type="text/css">
+<link rel="stylesheet" href="{{ "/css/style-8.css" }}" type="text/css">
 <script> </script>
 
 </div></section>

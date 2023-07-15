@@ -1,14 +1,3 @@
-<footer class="mailing-list {% if page.categories contains "newsletter" or paginator.posts %}mailing-list--show{% endif %}" id=mailing-list><div class=wrapper>
-<form action="https://tech.us19.list-manage.com/subscribe/post?u=6ae45290e89d217c96e3f9b40&amp;id=b327a06f9d" method="post" target="_blank">
-	<label for="mce-EMAIL">Send the next one to my email</label>
-	<div class=toolbar>
-	  <input type="email" value="" name="EMAIL" class="toolbar-input" id="mce-EMAIL" placeholder="email address" required>
-    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_6ae45290e89d217c96e3f9b40_b327a06f9d" tabindex="-1" value=""></div>
-    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="toolbar-item">
-  </div>
-</form>
-</div></footer>
 <footer role=note>
   <p class=wrapper>
   {% if paginator.previous_page %}
@@ -17,7 +6,6 @@
     <a href="{{ site.github.repository_url }}/edit/master/{{ page.path }}">✏️ Edit this page on GitHub</a>
   {% endif %}
     <span class=subscribe-options>
-      <a href="#mailing-list"><img alt="Mailing list" src="/images/email.svg" width=30 height=30></a>
       <a href="/feed.xml"><img alt="RSS" src="/images/rss.svg" width=25 height=25></a>
       <a href="https://github.com/bors-ng"><img title="Fork me on GitHub!" alt="GitHub" src="/images/github.svg" width=25 height=25></a>
     </span>

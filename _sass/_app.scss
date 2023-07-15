@@ -4,6 +4,12 @@ html {
   overflow-y: scroll;
   height: 100%;
 }
+summary {
+  cursor: default;
+}
+summary:hover {
+  color: blue;
+}
 body {
   display: flex;
   flex-direction: column;
@@ -22,7 +28,7 @@ main {
   padding: 8px 20px;
 }
 // The header, nav bar, and footer
-header, nav {
+header, nav, .topnav {
   border-bottom: solid 1px #CCC;
 }
 header {
@@ -86,7 +92,7 @@ header {
   }
 }
 
-nav {
+nav, .topnav {
   background-color: #EEE;
 }
 nav h1 {
@@ -95,29 +101,6 @@ nav h1 {
 footer {
   border-top: solid 1px #CCC;
   display: block;
-}
-footer.mailing-list {
-  border-top: none;
-  background: #333;
-  color: #fff;
-  font-weight: bold;
-  display: none;
-  &:target {
-    position: sticky;
-    display: block;
-  }
-  &.mailing-list--show {
-    display: block;
-  }
-  label {
-    display: block;
-    font-size: 2em;
-    margin: 16px 0;
-  }
-  .email {
-    background: #fff;
-    color: #000;
-  }
 }
 .subscribe-options {
   float: right;
