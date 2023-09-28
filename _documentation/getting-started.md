@@ -23,7 +23,7 @@ The general steps to setup bors-ng are:
     * **Note:** that bors reads bors.toml from the pull requests it's merging, not the one in master, so changes to the file get checked before they land. You can therefore verify whether bors is working by using `bors r+` to try and land the PR that enables it!
 * Once this is done, you should be able to use bors to merge, as discussed in the section below!
 
-## Detailed instauctions for self-hosting
+## Detailed instructions for self-hosting
 
 ### Step 1: Register a new GitHub App
 
